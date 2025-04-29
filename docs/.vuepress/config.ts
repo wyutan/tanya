@@ -111,6 +111,7 @@ export default defineUserConfig({
       // readingTime: true,
       markdown: {
         annotation: true, 
+        demo: true,
       },
 
       /**
@@ -128,8 +129,8 @@ export default defineUserConfig({
        *  markdown power
        * @see https://theme-plume.vuejs.press/config/plugin/markdown-power/
        */
-      markdownPower: {
-        demo: true, 
+      //markdownPower: {
+        //demo: true, 
       //   pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
       //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
       //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
@@ -148,7 +149,7 @@ export default defineUserConfig({
       //     go: true,         // ::: go-repl
       //     rust: true,       // ::: rust-repl
       //     kotlin: true,     // ::: kotlin-repl
-      },
+      //},
       //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
       // },
 
@@ -156,7 +157,7 @@ export default defineUserConfig({
        * 在 Markdown 文件中导入其他 markdown 文件内容。
        * @see https://theme-plume.vuejs.press/guide/markdown/include/
        */
-      markdownInclude: true,
+      //markdownInclude: true,
 
       /**
        * Markdown 数学公式
