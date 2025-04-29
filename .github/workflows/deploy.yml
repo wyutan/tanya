@@ -29,7 +29,6 @@ jobs:
           # 选择要使用的 node 版本
           node-version: 20
 
-
       # 安装依赖
       # Install dependencies
       - name: Install Dependencies
