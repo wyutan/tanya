@@ -1,0 +1,3 @@
+Sitemap: http://git.x-echo.net/sitemap.xml
+User-agent:*
+Disallow:
