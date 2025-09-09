@@ -15,7 +15,7 @@ export default defineNotesConfig({
     network,
     linux,
     cloud,
-    storage,
+    存储,
     容器,
     about,
   ]
