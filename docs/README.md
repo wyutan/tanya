@@ -21,6 +21,10 @@ config:
           link: /os/linux/
         -
           theme: brand
+          text: 存储 →
+          link: /存储/
+        -
+          theme: brand
           text: docker →
           link: /容器/       
         -
