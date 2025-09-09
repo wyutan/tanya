@@ -5,6 +5,5 @@ export default defineNoteConfig({
   link: '/storage/',
   sidebar: [
     { text: '存储笔记', prefix: 'storage', collapsed: false, items: 'auto', },
-
   ],
 })
