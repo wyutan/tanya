@@ -22,7 +22,7 @@ config:
         -
           theme: brand
           text: 存储 →
-          link: /存储/
+          link: /storage/
         -
           theme: brand
           text: docker →
