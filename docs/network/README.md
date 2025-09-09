@@ -1,7 +1,7 @@
 ---
 title: 网络基础
 ---
-网络协议、交换机配置模板
+网络协议、交换机配置模板、自动化
 - 网络协议
     - [IGP](./protocol/1.IGP.md)
     - [bgp](./protocol/2.bgp.md)
