@@ -1,8 +1,6 @@
 ---
-isHome: true
-title: 我的站点
-#pageLayout: home
-#externalLinkIcon: false
+pageLayout: home
+externalLinkIcon: false
 config:
   -
     type: hero
