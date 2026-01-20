@@ -41,7 +41,7 @@ jobs:
           file_pattern: 'package.json pnpm-lock.yaml'
 
       - name: Build VuePress site
-        run: pnpm run docs:build
+        run: pnpm run docs:build docs --clean-cache --clean-temp
 
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
