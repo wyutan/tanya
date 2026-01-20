@@ -1,11 +1,14 @@
 ---
-pageLayout: home
-externalLinkIcon: false
+isHome: true
+title: 我的站点
+#pageLayout: home
+#externalLinkIcon: false
 config:
   -
     type: hero
     full: true
-    background: tint-plate
+    effect: lighting
+    #background: tint-plate
     hero:
       name: 在这
       tagline: 是星辰，是雨雾，是闪电，是不羁的灵魂
