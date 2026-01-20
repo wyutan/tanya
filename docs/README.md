@@ -6,7 +6,7 @@ config:
     type: hero
     full: true
     effect: lighting
-    #background: tint-plate
+    background: tint-plate
     hero:
       name: 在这
       tagline: 是星辰，是雨雾，是闪电，是不羁的灵魂
