@@ -6,8 +6,7 @@ config:
     type: hero
     full: true
     forceDark: true
-    effect: lightning
-    background: tint-plate
+    effect: orb
     hero:
       name: 在这
       tagline: 是星辰，是雨雾，是闪电，是不羁的灵魂
