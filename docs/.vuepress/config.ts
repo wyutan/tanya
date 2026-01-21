@@ -20,9 +20,6 @@ export default defineUserConfig({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
     hostname: 'http://git.x-echo.net',
     search: { provider: 'local' },
-    codeHighlighter: {
-      themes: { light: 'aurora-x', dark: 'aurora-x' }, 
-    },
     /* 文档仓库配置，用于 editLink */
     // docsRepo: '',
     // docsDir: 'docs',
