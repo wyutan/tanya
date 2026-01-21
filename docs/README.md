@@ -5,7 +5,7 @@ config:
   -
     type: hero
     full: true
-    effect: universe
+    effect: lighting
     background: tint-plate
     hero:
       name: 在这
