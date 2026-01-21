@@ -8,10 +8,8 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-latest
-
-    # 授予 Actions 写入权限，否则无法将更新后的文件推送到仓库
     permissions:
-      contents: write
+      contents: write # 必须开启，否则无法写回更新后的版本号
 
     steps:
       - uses: actions/checkout@v4
@@ -26,22 +24,22 @@ jobs:
         with:
           node-version: 20
 
-      # 关键修改：更新所有依赖并重新生成 lock 文件
-      - name: Update Dependencies
-        run: |
-          pnpm update
-          pnpm install
+      # 1. 先安装当前版本的依赖
+      - name: Install Dependencies
+        run: pnpm install
 
-      # 关键修改：将更新后的 package.json 和 pnpm-lock.yaml 自动提交并推送到 GitHub
-      - name: Commit Updated Files
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update dependencies and regenerate pnpm-lock.yaml"
-          file_pattern: 'package.json pnpm-lock.yaml'
-
-      - name: Update VuePress site
+      # 2. 运行 VuePress 专用升级工具，它会自动修改 package.json 中的版本号
+      - name: Run vp-update
         run: pnpm dlx vp-update
 
+      # 3. 核心步骤：将 vp-update 修改后的 package.json 和新 lock 文件推回 GitHub
+      - name: Commit and Push Updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update theme and dependencies to latest"
+          file_pattern: 'package.json pnpm-lock.yaml'
+
+      # 4. 正常构建
       - name: Build VuePress site
         run: pnpm run docs:build
 
