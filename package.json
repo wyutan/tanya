@@ -27,6 +27,8 @@
     "vuepress-theme-plume": "1.0.0-rc.187"
   },
   "dependencies": {
-    "ogl": "^1.0.11"
+    "ogl": "^1.0.11",
+    "postprocessing": "^6.38.2",
+    "three": "^0.182.0"
   }
 }
