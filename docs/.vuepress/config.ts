@@ -19,7 +19,7 @@ export default defineUserConfig({
   theme: plumeTheme({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
     hostname: 'http://git.x-echo.net',
-
+    search: { provider: 'local' },
     /* 文档仓库配置，用于 editLink */
     // docsRepo: '',
     // docsDir: 'docs',
@@ -94,18 +94,18 @@ export default defineUserConfig({
       },
 
       /* 本地搜索, 默认启用 */
-      search: false,
+      // search: false,
 
       /**
        * Algolia DocSearch
        * 启用此搜索需要将 本地搜索 search 设置为 false
        * @see https://theme-plume.vuejs.press/config/plugins/search/#algolia-docsearch
        */
-      docsearch: {
-        appId: '5FYYWUK4F4',
-        apiKey: 'e6476b6808afeb8446c9cfd429df36ea',
-        indexName: 'github',
-      },      
+      //docsearch: {
+        //appId: '5FYYWUK4F4',
+        //apiKey: 'e6476b6808afeb8446c9cfd429df36ea',
+        //indexName: 'github',
+      //},      
 
       /* 文章字数统计、阅读时间，设置为 false 则禁用 */
       // readingTime: true,
