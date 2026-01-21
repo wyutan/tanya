@@ -21,7 +21,7 @@ export default defineUserConfig({
     hostname: 'http://git.x-echo.net',
     search: { provider: 'local' },
     codeHighlighter: {
-      themes: { light: 'vitesse-light', dark: 'vitesse-dark' }, 
+      themes: { light: 'aurora-x', dark: 'aurora-x' }, 
     },
     /* 文档仓库配置，用于 editLink */
     // docsRepo: '',
