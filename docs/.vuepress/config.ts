@@ -22,7 +22,7 @@ export default defineUserConfig({
     search: { provider: 'local' },
     codeHighlighter: {
       themes: { light: 'vitesse-light', dark: 'vitesse-dark' }, 
-    }
+    },
     /* 文档仓库配置，用于 editLink */
     // docsRepo: '',
     // docsDir: 'docs',
