@@ -28,7 +28,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pnpm install
-          pnpm add three postprocessing
+          pnpm add ogl three postprocessing
 
       # 2. 运行 VuePress 专用升级工具，它会自动修改 package.json 中的版本号
       - name: Run vp-update
