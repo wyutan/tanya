@@ -6,6 +6,7 @@ config:
     type: hero
     full: true
     forceDark: true
+    background: https://bing.biturl.top/?resolution=1920&format=image&index=random
     effect: hyper-speed
     effectConfig:
       distortion: turbulentDistortion
