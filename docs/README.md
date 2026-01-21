@@ -5,7 +5,7 @@ config:
   -
     type: hero
     full: true
-    effect: lightning
+    // effect: lightning
     background: tint-plate
     hero:
       name: 在这
