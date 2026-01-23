@@ -7,6 +7,7 @@ title: 网络基础
     - [bgp](./protocol/2.bgp.md)
     - [stp](./protocol/3.stp.md)
     - [vxlan](./protocol/4.vxlan.md)
+    - [路由协议对比](./protocol/5.路由协议对比.md)
 - 配置模板
     - [华为S系列](./template/1.hw_s.md)
     - [华为CE系列](./template/2.hw_ce.md)
