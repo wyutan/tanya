@@ -21,3 +21,4 @@ title: linux基础
     - [创建lvm](./自动化运维/1.创建lvm.md)
     - [扩容lvm](./自动化运维/2.扩容lvm.md)
     - [修改root密码](./自动化运维/3.修改root密码.md)
+    - [zabbix](./自动化运维/4.zabbix.md)
