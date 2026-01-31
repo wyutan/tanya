@@ -26,8 +26,8 @@ export default defineUserConfig({
     // docsBranch: '',
 
     /* 页内信息 */
-    // editLink: true,
-    // lastUpdated: true,
+    editLink: false,
+    lastUpdated: true,
     contributors: {
       mode: 'block',
       info: [
