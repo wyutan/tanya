@@ -6,6 +6,7 @@ title: linux基础
     - [nfs、ftp、samba区别](./note/1.nfs、ftp和samba区别.md)
     - [linux双网卡](./note/2.linux双网卡.md)
     - [linux网卡聚合](./note/3.网卡聚合.md)
+    - [zabbix升级8.0](./note/4.zabbix升级8.0.md)
 - 常用
     - [重置RHEL密码](./常用/1.重置RHEL密码.md)
     - [lvm](./常用/2.LVM.md)
@@ -21,4 +22,4 @@ title: linux基础
     - [创建lvm](./自动化运维/1.创建lvm.md)
     - [扩容lvm](./自动化运维/2.扩容lvm.md)
     - [修改root密码](./自动化运维/3.修改root密码.md)
-    - [zabbix](./自动化运维/4.zabbix.md)
+    - [zabbix](./自动化运维/4.zabbix监控项.md)
