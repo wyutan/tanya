@@ -1,4 +1,4 @@
-name: deploy
+pame: deploy
 
 on:
   push:
@@ -27,7 +27,8 @@ jobs:
       # 1. 先安装当前版本的依赖
       - name: Install Dependencies
         run: |
-          pnpm install --no-frozen-lockfile
+          pnpm install --frozen-lockfile
+          pnpm add markmap-lib markmap-toolbar markmap-view
 
       # 2. 运行 VuePress 专用升级工具，它会自动修改 package.json 中的版本号
       - name: Run vp-update
