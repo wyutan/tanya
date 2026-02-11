@@ -1,4 +1,4 @@
-pame: deploy
+name: deploy
 
 on:
   push:
