@@ -26,8 +26,9 @@ jobs:
 
       # 1. 先安装当前版本的依赖
       - name: Install Dependencies
-        run: pnpm add markmap-lib markmap-toolbar markmap-view
-        run: pnpm install --frozen-lockfile
+        run: |
+          pnpm add markmap-lib markmap-toolbar markmap-view
+          pnpm install --frozen-lockfile
 
       # 2. 运行 VuePress 专用升级工具，它会自动修改 package.json 中的版本号
       - name: Run vp-update
