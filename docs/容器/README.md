@@ -1,7 +1,7 @@
 ---
 title: 容器
 ---
-docker学习笔记、k8s学习笔记、k8s部署的yaml
+docker学习笔记、k8s学习笔记、k8s部署的yaml、mysql学习笔记
 - docker
   - [docker参数](./docker/1.docker参数.md)
   - [docker配置GPU](./docker/2.docker配置GPU.md)
