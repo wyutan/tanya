@@ -14,3 +14,6 @@ docker学习笔记、k8s学习笔记、k8s部署的yaml
     - [zabbix](./k8s/yaml/2.zabbix.md)
     - [elk](./k8s/yaml/3.elk.md)
     - [sw_bak](./k8s/yaml/4.sw_bak.md)
+- mysql
+  - [mysql笔记](./mysql/1.note.md)
+
