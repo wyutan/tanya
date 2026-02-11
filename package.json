@@ -27,6 +27,9 @@
     "vuepress-theme-plume": "1.0.0-rc.187"
   },
   "dependencies": {
+    "markmap-lib": "^0.18.12",
+    "markmap-toolbar": "^0.18.12",
+    "markmap-view": "^0.18.12",
     "ogl": "^1.0.11",
     "postprocessing": "^6.38.2",
     "three": "^0.182.0"
