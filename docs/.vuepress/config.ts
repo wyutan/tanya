@@ -131,6 +131,7 @@ export default defineUserConfig({
        * @see https://theme-plume.vuejs.press/config/plugin/markdown-power/
        */
       markdownPower: {
+        markmap: true,
         demo: true, 
         pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
       //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
