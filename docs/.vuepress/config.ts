@@ -110,27 +110,7 @@ export default defineUserConfig({
       /* 文章字数统计、阅读时间，设置为 false 则禁用 */
       // readingTime: true,
       markdown: {
-        annotation: true, 
-        demo: true,
-        // markmap: true,
-      },
-
-      /**
-       * markdown enhance
-       * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
-       */
-      // markdownEnhance: {
-      //   chartjs: true,
-      //   echarts: true,
-      //   mermaid: true,
-      //   flowchart: true,
-      // },
-
-      /**
-       *  markdown power
-       * @see https://theme-plume.vuejs.press/config/plugin/markdown-power/
-       */
-      markdownPower: {
+        markdownPower: {
         markmap: true,
         demo: true, 
         pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
@@ -155,6 +135,27 @@ export default defineUserConfig({
       //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
       },
 
+        annotation: true, 
+        demo: true,
+        // markmap: true,
+      },
+
+      /**
+       * markdown enhance
+       * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
+       */
+      // markdownEnhance: {
+      //   chartjs: true,
+      //   echarts: true,
+      //   mermaid: true,
+      //   flowchart: true,
+      // },
+
+      /**
+       *  markdown power
+       * @see https://theme-plume.vuejs.press/config/plugin/markdown-power/
+       */
+      
       /**
        * 在 Markdown 文件中导入其他 markdown 文件内容。
        * @see https://theme-plume.vuejs.press/guide/markdown/include/
