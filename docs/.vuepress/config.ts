@@ -75,6 +75,30 @@ export default defineUserConfig({
     },
 
     plugins: {
+      markdownPower: {
+        markmap: true,
+        demo: true, 
+        pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
+      //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
+      //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
+        bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
+      //   youtube: true,      // 启用嵌入 youtube视频 语法 @[youtube](video_id)
+      //   artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
+      //   audioReader: true,  // 启用嵌入音频朗读功能 语法 @[audioReader](url)
+      //   icons: true,        // 启用内置图标语法  :[icon-name]:
+      //   codepen: true,      // 启用嵌入 codepen 语法 @[codepen](user/slash)
+      //   replit: true,       // 启用嵌入 replit 语法 @[replit](user/repl-name)
+      //   codeSandbox: true,  // 启用嵌入 codeSandbox 语法 @[codeSandbox](id)
+      //   jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
+      //   npmTo: true,        // 启用 npm-to 容器  ::: npm-to
+      //   demo: true,         // 启用 demo 容器  ::: demo
+      //   repl: {             // 启用 代码演示容器
+      //     go: true,         // ::: go-repl
+      //     rust: true,       // ::: rust-repl
+      //     kotlin: true,     // ::: kotlin-repl
+      //},
+      //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
+      },
       git: true,
       'vuepress-plugin-iconify': {
         size: '24px',  // 图标的默认大小
@@ -109,30 +133,6 @@ export default defineUserConfig({
 
       /* 文章字数统计、阅读时间，设置为 false 则禁用 */
       // readingTime: true,
-      markdownPower: {
-        markmap: true,
-        demo: true, 
-        pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
-      //   caniuse: true,      // 启用 caniuse 语法  @[caniuse](feature_name)
-      //   plot: true,         // 启用隐秘文本语法 !!xxxx!!
-        bilibili: true,     // 启用嵌入 bilibili视频 语法 @[bilibili](bid)
-      //   youtube: true,      // 启用嵌入 youtube视频 语法 @[youtube](video_id)
-      //   artPlayer: true,    // 启用嵌入 artPlayer 本地视频 语法 @[artPlayer](url)
-      //   audioReader: true,  // 启用嵌入音频朗读功能 语法 @[audioReader](url)
-      //   icons: true,        // 启用内置图标语法  :[icon-name]:
-      //   codepen: true,      // 启用嵌入 codepen 语法 @[codepen](user/slash)
-      //   replit: true,       // 启用嵌入 replit 语法 @[replit](user/repl-name)
-      //   codeSandbox: true,  // 启用嵌入 codeSandbox 语法 @[codeSandbox](id)
-      //   jsfiddle: true,     // 启用嵌入 jsfiddle 语法 @[jsfiddle](user/id)
-      //   npmTo: true,        // 启用 npm-to 容器  ::: npm-to
-      //   demo: true,         // 启用 demo 容器  ::: demo
-      //   repl: {             // 启用 代码演示容器
-      //     go: true,         // ::: go-repl
-      //     rust: true,       // ::: rust-repl
-      //     kotlin: true,     // ::: kotlin-repl
-      //},
-      //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
-      },
 
       markdown: {
         annotation: true, 
