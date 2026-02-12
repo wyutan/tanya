@@ -1,4 +1,4 @@
-import { viteBundler } from '@vuepress/bundler-vite'
+.import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
@@ -134,7 +134,7 @@ export default defineUserConfig({
        * 是否全屏水印，默认为 `true`，
        * 设置为 `false` 时，水印仅在 内容区域中显示。
        */
-      fullPage: true,
+      fullPage: false,
 
       /** @see https://zhensherlock.github.io/watermark-js-plus/zh/config/ */
       watermarkOptions: {
