@@ -109,8 +109,7 @@ export default defineUserConfig({
 
       /* 文章字数统计、阅读时间，设置为 false 则禁用 */
       // readingTime: true,
-      markdown: {
-        markdownPower: {
+      markdownPower: {
         markmap: true,
         demo: true, 
         pdf: true,          // 启用 PDF 嵌入 @[pdf](/xxx.pdf)
@@ -135,6 +134,7 @@ export default defineUserConfig({
       //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
       },
 
+      markdown: {
         annotation: true, 
         demo: true,
         // markmap: true,
