@@ -112,7 +112,7 @@ export default defineUserConfig({
       markdown: {
         annotation: true, 
         demo: true,
-        markmap: true,
+        // markmap: true,
       },
 
       /**
