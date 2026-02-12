@@ -16,4 +16,5 @@ docker学习笔记、k8s学习笔记、k8s部署的yaml、mysql学习笔记
     - [sw_bak](./k8s/yaml/4.sw_bak.md)
 - mysql
   - [mysql笔记](./mysql/1.note.md)
+  - [test](./mysql/1.test.md)
 
