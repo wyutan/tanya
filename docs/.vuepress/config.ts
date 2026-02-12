@@ -62,8 +62,8 @@ export default defineUserConfig({
      * 编译缓存，加快编译速度
      * @see https://theme-plume.vuejs.press/config/basic/#cache
      */
-    cache: 'filesystem',
-
+    // cache: 'filesystem',
+    cache: false,
     /**
      * 为 markdown 文件自动添加 frontmatter 配置
      * @see https://theme-plume.vuejs.press/config/basic/#autofrontmatter
