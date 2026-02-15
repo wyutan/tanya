@@ -31,20 +31,22 @@
 
 .about-me-character-content {
   display: flex;
-  justify-content: space-between; /* 💡 关键：让文字在左，图片在右 */
-  align-items: flex-end; /* 💡 让文字和图片都在底部对齐 */
-  margin-top: 10px;
+  justify-content: space-between; /* 左右撑开 */
+  align-items: flex-end;          /* 底部对齐 */
+  min-height: 100px;              /* 给个最小高度防止太扁 */
 }
 
 .about-me-card-text-big {
-  font-size: 2.2rem;   /* 增大字号 */
+  font-size: 2rem;   /* 增大字号 */
   font-weight: 800;    /* 加粗 */
-  line-height: 1.1;    /* 紧凑行高 */
+  line-height: 1.2;    /* 紧凑行高 */
   margin: 0;           /* 清除默认边距 */
 }
 
 .about-me-card-text-color {
-  color: #576b95; /* 模拟图片中的紫色/蓝色调 */
+  background: linear-gradient(to right, #7389f4, #9168e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .type-code {
@@ -55,7 +57,7 @@
 .about-me-character-type {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* 文字整体靠下 */
+  gap: 4px; /* 控制“守卫者”和“ISFJ-T”之间的距离 */
 }
 
 .about-me-character-img {
