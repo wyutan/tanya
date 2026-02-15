@@ -36,9 +36,9 @@
         <AboutMeCharacter/>
       </div>
 
-      <div class="about-me-1-row">
-        <AboutMeFriendLink/>
-      </div>
+      //<div class="about-me-1-row">
+        //<AboutMeFriendLink/>
+      //</div>
 
     </div>
 
@@ -118,7 +118,7 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
-import AboutMeFriendLink from "./AboutMeFriendLink.vue";
+//import AboutMeFriendLink from "./AboutMeFriendLink.vue";
 
 interface Comet {
   direction: 'horizontal' | 'vertical'
