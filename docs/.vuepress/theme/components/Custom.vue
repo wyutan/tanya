@@ -10,7 +10,8 @@
           <template #motto>
             <slot name="motto">
               <p class="about-me-card-title-normal">𝓂𝑜𝓉𝓉𝑜</p>
-              <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电，是不羁的灵魂</p>
+              <p class="about-me-card-text-big">风带来故事的种子</p>
+              <p class="about-me-card-text-big about-me-card-text-color">时间使之发芽</p>
             </slot>
           </template>
         </AboutMeText>
@@ -34,10 +35,6 @@
         </AboutMeText>
         <AboutMeCharacter/>
       </div>
-
-      <div class="about-me-1-row">
-      </div>
-
     </div>
 
 
@@ -76,15 +73,11 @@ canvas {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 20px;
-  align-items: stretch !important; /* 💡 强制左右等高 */
   @media screen and (max-width: 770px) {
     display: flex;
     flex-direction: column;
-  }
-}
 
-.about-me-3-2-row > * {
-  height: 100%;
+  }
 }
 
 .about-me-1-1-row {
@@ -120,8 +113,7 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
-let cometTimer: any = null;
-  
+
 interface Comet {
   direction: 'horizontal' | 'vertical'
   position: number
@@ -142,11 +134,7 @@ const initCanvas = () => {
   if (!canvas) return
 
   ctx.value = canvas.getContext('2d')
-  setTimeout(() => {
-    resizeCanvas()
-    // 立即执行一次重绘，防止空白
-    drawGrid() 
-  }, 50)
+  resizeCanvas()
   window.addEventListener('resize', resizeCanvas)
 }
 
@@ -293,15 +281,12 @@ onMounted(() => {
   initCanvas()
   animate()
   setInterval(createComet, 500)
-  cometInterval = setInterval(createComet, 500); // 开启定时器
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', resizeCanvas)
   cancelAnimationFrame(animationFrameId)
-  if (cometTimer) {
-    clearInterval(cometTimer);
-    cometTimer = null;
-  }
 })
 </script>
+
+
