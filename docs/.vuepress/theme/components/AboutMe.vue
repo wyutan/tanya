@@ -33,6 +33,6 @@
 .about-me-card-text-big {
   font-size: 2rem;   /* 设置为约2倍大小 */
   font-weight: 800;    /* 极粗体 */
-  line-height: 1.1;    /* 大字体建议调小行高，视觉更紧凑 */
+  line-height: 1.2;    /* 大字体建议调小行高，视觉更紧凑 */
 }
 </style>
