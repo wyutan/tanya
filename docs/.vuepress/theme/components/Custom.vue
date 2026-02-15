@@ -35,6 +35,11 @@
         </AboutMeText>
         <AboutMeCharacter/>
       </div>
+
+      <div class="about-me-1-row">
+        <AboutMeFriendLink/>
+      </div>
+
     </div>
 
 
@@ -71,7 +76,7 @@ canvas {
 .about-me-3-2-row {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-columns: 3fr 2fr;
   gap: 20px;
   @media screen and (max-width: 770px) {
     display: flex;
@@ -113,6 +118,7 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
+import AboutMeFriendLink from "./AboutMeFriendLink.vue";
 
 interface Comet {
   direction: 'horizontal' | 'vertical'
