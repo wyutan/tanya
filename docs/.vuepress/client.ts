@@ -17,6 +17,6 @@ export default defineClientConfig({
     // app.component('Swiper', Swiper) // you should install `swiper`
 
     // your custom components
-    app.component('CustomComponent', CustomComponent)
+    app.component('Custom', Custom)
   },
 })
