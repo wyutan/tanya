@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import AboutMeLife from './AboutMeLife.vue'
 
-const message = ref('Hello World!')
 </script>
 
 <template>
