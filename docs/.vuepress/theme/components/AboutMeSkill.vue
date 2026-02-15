@@ -48,14 +48,14 @@ const technology = ref([
   {type: 'WiFi', icon: '/wifi.svg'},
   {type: 'Linux', icon: '/linux.svg'},
   {type: 'Windows', icon: '/windows.svg'},
-  {type: 'Zabbix', icon: '/zabbix.svg'}, // 确保 public 目录下有这个文件
+  {type: 'Zabbix', icon: '/ZABBIX.svg'}, // 确保 public 目录下有这个文件
 ]);
 
 const certifications = ref([
   {type: 'Cisco', icon: '/cisco.svg'},
   {type: 'PMP', icon: '/pmi_logo.svg'},
   {type: 'Redhat', icon: '/redhat.svg'}, // 确保 public 目录下有这个文件
-  {type: 'K8S', icon: '/kubernetes.svg'}, // 确保 public 目录下有这个文件
+  {type: 'K8S', icon: '/k8s.svg'}, // 确保 public 目录下有这个文件
   {type: 'Huawei', icon: '/HUAWEI.svg'},
 ]);
 </script>
