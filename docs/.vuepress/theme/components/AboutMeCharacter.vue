@@ -8,7 +8,7 @@
     <div class="about-me-character-content">
       <div class="about-me-character-type">
         <p class="about-me-card-text-big about-me-card-text-color">逻辑学家</p>
-        <p class="about-me-card-text-big">INTP-T</p>
+        <p class="about-me-card-text-big">INTP-A</p>
       </div>
       <div class="about-me-character-img">
       </div>
