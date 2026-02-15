@@ -35,18 +35,18 @@ const technology = ref([
   {type: 'Switch', icon: '/Switch.svg'},
   {type: 'FW', icon: '/防火墙.svg'},
   {type: 'WiFi', icon: '/wifi.svg'},
-  {type: 'Linux', icon: 'linux.svg'},
-  {type: 'Windows', icon: 'windows.svg'},
+  {type: 'Linux', icon: '/linux.svg'},
+  {type: 'Windows', icon: '/windows.svg'},
   {type: 'Zabbix', icon: 'logos:zabbix'},
 ]);
 
 // https://icon-sets.iconify.design/?query=android
 const certifications = ref([
-  {type: 'Cisco', icon: 'lineicons:cisco'},
+  {type: 'Cisco', icon: '/cisco.svg'},
   {type: 'PMP', icon: '/pmi_logo.svg'},
   {type: 'Redhat', icon: 'logos:redhat-icon'},
   {type: 'K8S', icon: 'skill-icons:kubernetes'},
-  {type: 'Huawei', icon: 'cbi:huawei'},
+  {type: 'Huawei', icon: '/HUAWEI.svg'},
 ]);
 
 </script>
