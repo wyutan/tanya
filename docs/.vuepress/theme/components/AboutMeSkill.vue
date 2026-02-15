@@ -4,24 +4,31 @@
       <p class="about-me-card-title-normal">𝒮𝓀𝒾𝓁𝓁</p>
       <p class="about-me-card-text-big">我的能力</p>
     </div>
-    <!-- 第一行向左移动 -->
+
     <div class="marquee-row first-row">
       <div class="marquee-content">
-        <span v-for="(item, index) in technology" :key="index"> <icon :name="item.icon"/> </span>
-        <span v-for="(item, index) in technology" :key="index + technology.length"><icon :name="item.icon"/></span>
+        <span v-for="(item, index) in [...technology, ...technology]" :key="index">
+          <img v-if="item.icon.startsWith('/')" :src="item.icon" class="skill-icon-img" />
+          <icon v-else :name="item.icon"/>
+        </span>
       </div>
     </div>
-    <!-- 第二行向右移动 -->
+
     <div class="marquee-row second-row">
       <div class="marquee-content">
-        <span v-for="(item, index) in certifications" :key="index"><icon :name="item.icon"/></span>
-        <span v-for="(item, index) in certifications" :key="index + certifications.length"><icon :name="item.icon"/></span>
+        <span v-for="(item, index) in [...certifications, ...certifications]" :key="index">
+          <img v-if="item.icon.startsWith('/')" :src="item.icon" class="skill-icon-img" />
+          <icon v-else :name="item.icon"/>
+        </span>
       </div>
     </div>
 
     <div class="about-me-skill-detail">
-      <span v-for="(item, index) in technology" :key="index"> <icon
-          :name="item.icon"/> <span>{{ item.type }}</span>  </span>
+      <span v-for="(item, index) in [...technology, ...certifications]" :key="index">
+        <img v-if="item.icon.startsWith('/')" :src="item.icon" class="detail-icon-img" />
+        <icon v-else :name="item.icon"/>
+        <span>{{ item.type }}</span>
+      </span>
     </div>
   </div>
 </template>
