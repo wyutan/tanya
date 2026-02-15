@@ -3,7 +3,8 @@ pageLayout: home
 externalLinkIcon: false
 config:
   -
-    type: hero
+    type: Custom
+    //type: hero
     full: true
     forceDark: true
     effect: hyper-speed
