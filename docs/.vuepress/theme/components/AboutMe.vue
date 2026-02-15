@@ -16,6 +16,10 @@
 
 <style scoped>
 .about-me-name {
+  height: 100%; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 12px;
   justify-content: center;
   padding: 2rem;
