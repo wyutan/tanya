@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <router-link to="/blog/" class="head-social-avatar">
+  <router-link to="/about/" class="head-social-avatar">
     <div class="about-me-name">
       <p>𝐻𝑒𝓁𝓁𝑜, 𝓃𝒾𝒸𝑒 𝓉𝑜 𝓂𝑒𝑒𝓉 𝓎𝑜𝓊 !👋</p>
       <p class="about-me-card-text-big">你可以叫我 𝓽𝓪𝓷𝓽𝓪𝓷 .</p>
