@@ -25,7 +25,8 @@
 
   > p {
     color: var(--vp-c-text-1);
-    margin: 1.2rem 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
