@@ -36,7 +36,7 @@
   margin-top: 10px;
 }
 
-about-me-card-text-big {
+.about-me-card-text-big {
   font-size: 2.2rem;   /* 增大字号 */
   font-weight: 800;    /* 加粗 */
   line-height: 1.1;    /* 紧凑行高 */
