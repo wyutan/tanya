@@ -31,29 +31,29 @@ import {ref} from 'vue';
 
 
 const technology = ref([
-//  {type: 'Java', icon: 'vscode-icons:file-type-java'},
-//  {type: 'Go', icon: 'vscode-icons:file-type-go'},
-//  {type: 'Proto', icon: 'vscode-icons:file-type-protobuf'},
-//  {type: 'Dart', icon: 'logos:dart'},
-//  {type: 'Python', icon: 'material-icon-theme:python'},
-//  {type: 'C/C++', icon: 'vscode-icons:file-type-cpp2'},
-//  {type: 'TypeScript', icon: 'vscode-icons:file-type-typescriptdef'},
-//  {type: 'Android', icon: 'devicon:android'},
-//  {type: 'Flutter', icon: 'logos:flutter'},
-//  {type: 'MySQL', icon: 'devicon:mysql'},
-//  {type: 'Elasticsearch', icon: 'vscode-icons:file-type-elastic'},
-//  {type: 'MQ', icon: 'simple-icons:apacherocketmq'}
+  {type: 'Java', icon: 'vscode-icons:file-type-java'},
+  {type: 'Go', icon: 'vscode-icons:file-type-go'},
+  {type: 'Proto', icon: 'vscode-icons:file-type-protobuf'},
+  {type: 'Dart', icon: 'logos:dart'},
+  {type: 'Python', icon: 'material-icon-theme:python'},
+  {type: 'C/C++', icon: 'vscode-icons:file-type-cpp2'},
+  {type: 'TypeScript', icon: 'vscode-icons:file-type-typescriptdef'},
+  {type: 'Android', icon: 'devicon:android'},
+  {type: 'Flutter', icon: 'logos:flutter'},
+  {type: 'MySQL', icon: 'devicon:mysql'},
+  {type: 'Elasticsearch', icon: 'vscode-icons:file-type-elastic'},
+  {type: 'MQ', icon: 'simple-icons:apacherocketmq'}
 ]);
 
 // https://icon-sets.iconify.design/?query=android
 const tools = ref([
-//  {type: 'GoLand', icon: 'logos:goland'},
-//  {type: 'IDEA', icon: 'logos:intellij-idea'},
-//  {type: 'PyCharm', icon: 'devicon:pycharm'},
-//  {type: 'Android Studio', icon: 'skill-icons:androidstudio-light'},
-//  {type: 'VSCode', icon: 'vscode-icons:file-type-vscode'},
-//  {type: 'iTerm2', icon: 'simple-icons:iterm2'},
-//  {type: 'Postman', icon: 'vscode-icons:file-type-postman'}
+  {type: 'GoLand', icon: 'logos:goland'},
+  {type: 'IDEA', icon: 'logos:intellij-idea'},
+  {type: 'PyCharm', icon: 'devicon:pycharm'},
+  {type: 'Android Studio', icon: 'skill-icons:androidstudio-light'},
+  {type: 'VSCode', icon: 'vscode-icons:file-type-vscode'},
+  {type: 'iTerm2', icon: 'simple-icons:iterm2'},
+  {type: 'Postman', icon: 'vscode-icons:file-type-postman'}
 ]);
 
 </script>
@@ -61,7 +61,7 @@ const tools = ref([
 <style scoped>
 .about-me-skill {
   position: relative;
-  min-height: 200px;
+  min-height: 316px;
   padding: 20px 0;
   z-index: 1;
 
