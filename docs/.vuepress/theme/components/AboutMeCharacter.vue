@@ -7,8 +7,8 @@
     <p class="about-me-card-title-normal">𝒸𝒽𝒶𝓇𝒶𝒸𝓉𝑒𝓇</p>
     <div class="about-me-character-content">
       <div class="about-me-character-type">
-        <p class="about-me-card-text-big about-me-card-text-color">守卫者</p>
-        <p class="about-me-card-text-big">ISFJ-T</p>
+        <p class="about-me-card-text-big about-me-card-text-color">逻辑学家</p>
+        <p class="about-me-card-text-big">INTP-T</p>
       </div>
       <div class="about-me-character-img">
       </div>
