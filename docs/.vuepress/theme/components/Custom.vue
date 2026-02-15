@@ -142,7 +142,11 @@ const initCanvas = () => {
   if (!canvas) return
 
   ctx.value = canvas.getContext('2d')
-  resizeCanvas()
+  setTimeout(() => {
+    resizeCanvas()
+    // 立即执行一次重绘，防止空白
+    drawGrid() 
+  }, 50)
   window.addEventListener('resize', resizeCanvas)
 }
 
