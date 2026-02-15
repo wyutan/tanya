@@ -117,7 +117,8 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
-
+let cometTimer: any = null;
+  
 interface Comet {
   direction: 'horizontal' | 'vertical'
   position: number
@@ -285,10 +286,15 @@ onMounted(() => {
   initCanvas()
   animate()
   setInterval(createComet, 500)
+  cometInterval = setInterval(createComet, 500); // 开启定时器
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', resizeCanvas)
   cancelAnimationFrame(animationFrameId)
+  if (cometTimer) {
+    clearInterval(cometTimer);
+    cometTimer = null;
+  }
 })
 </script>
