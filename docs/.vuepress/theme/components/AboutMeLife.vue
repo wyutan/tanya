@@ -54,6 +54,16 @@ onMounted(() => {
 
 <style scoped>
 
+about-me-life {
+  padding: 20px;
+  border-radius: 20px; /* 让边框圆润一点，更像图片效果 */
+  border: 1px solid #e2e8f0; /* 模拟图片的边框线 */
+
+  &:hover .about-me-character-img {
+    transform: scale(1.1);
+  }
+}
+  
 .about-me-life {
   height: 316px;
   padding: 20px 0;
@@ -62,5 +72,11 @@ onMounted(() => {
 
 .chart-container {
   height: 100%;
+}
+
+.about-me-card-text-big {
+  font-size: 2.5rem;   /* 设置为约2倍大小 */
+  font-weight: 800;    /* 极粗体 */
+  line-height: 1.5;    /* 大字体建议调小行高，视觉更紧凑 */
 }
 </style>
