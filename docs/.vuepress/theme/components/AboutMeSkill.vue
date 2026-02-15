@@ -61,7 +61,7 @@ const tools = ref([
 <style scoped>
 .about-me-skill {
   position: relative;
-  min-height: 316px;
+  min-height: 200px;
   padding: 20px 0;
   z-index: 1;
 
