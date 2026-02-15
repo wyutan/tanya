@@ -2,7 +2,6 @@
   <div :key="$route.fullPath" class="container">
     <canvas ref="canvasRef"></canvas>
 
-
     <div class="about-me">
       <div class="about-me-3-2-row">
         <AboutMe/>
@@ -35,8 +34,6 @@
         <AboutMeCharacter/>
       </div>
     </div>
-
-
   </div>
 </template>
 
@@ -75,7 +72,6 @@ canvas {
   @media screen and (max-width: 770px) {
     display: flex;
     flex-direction: column;
-
   }
 }
 
@@ -100,21 +96,21 @@ canvas {
     flex-direction: column;
   }
 }
-
-
 </style>
 
-
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted} from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import AboutMe from "./AboutMe.vue";
 import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
-import { nextTick } from 'vue' // 💡 必须引入
-  
-let cometTimer: number | null = null; // 💡 定义定时器持有者新增
+import { nextTick } from 'vue'
+import { useRoute } from 'vue-router'
+
+// 变量声明 - 每个只声明一次
+let cometTimer: number | null = null
+let animationFrameId: number | null = null
 
 interface Comet {
   direction: 'horizontal' | 'vertical'
@@ -129,15 +125,58 @@ const linesGap = 20
 const comets = ref<Comet[]>([])
 const mouseX = ref(-1)
 const mouseY = ref(-1)
-let animationFrameId: number
+const route = useRoute()
+const isInitialized = ref(false)
+
+// 清理函数
+const cleanup = () => {
+  // 清理动画帧
+  if (animationFrameId !== null) {
+    cancelAnimationFrame(animationFrameId)
+    animationFrameId = null
+  }
+  
+  // 清理定时器
+  if (cometTimer !== null) {
+    clearInterval(cometTimer)
+    cometTimer = null
+  }
+
+  // 清理事件监听
+  window.removeEventListener('resize', resizeCanvas)
+  
+  // 清空彗星数组
+  comets.value = []
+  
+  // 清空 canvas
+  if (ctx.value && canvasRef.value) {
+    ctx.value.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height)
+  }
+  
+  isInitialized.value = false
+}
 
 const initCanvas = () => {
   const canvas = canvasRef.value
-  if (!canvas) return
+  if (!canvas) {
+    console.warn('Canvas element not found')
+    return false
+  }
 
-  ctx.value = canvas.getContext('2d')
+  const context = canvas.getContext('2d')
+  if (!context) {
+    console.warn('Canvas context not available')
+    return false
+  }
+
+  ctx.value = context
   resizeCanvas()
+  
+  // 防止重复绑定
+  window.removeEventListener('resize', resizeCanvas)
   window.addEventListener('resize', resizeCanvas)
+  
+  return true
 }
 
 const resizeCanvas = () => {
@@ -156,11 +195,10 @@ const drawGrid = () => {
   context.clearRect(0, 0, canvas.width, canvas.height)
   context.lineWidth = 1
 
-  // 绘制带渐变效果的网格
-  const radius = 100 // 颜色影响半径
+  const radius = 100
   const hasMouse = mouseX.value >= 0 && mouseY.value >= 0
 
-  const theme = document.documentElement.getAttribute('data-theme');
+  const theme = document.documentElement.getAttribute('data-theme')
   let baseColor = "100, 190, 190"
   let baseAlpha = 0.12
   if (theme === 'dark') {
@@ -204,7 +242,6 @@ const drawGrid = () => {
   }
 }
 
-// 彗星函数
 const createComet = () => {
   const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical'
   const maxPosition = direction === 'horizontal'
@@ -265,7 +302,8 @@ const drawComet = (comet: Comet) => {
 const animate = () => {
   const canvas = canvasRef.value
   const context = ctx.value
-  if (!canvas || !context) return
+  // 添加初始化检查，防止清理后继续运行
+  if (!canvas || !context || !isInitialized.value) return
 
   context.clearRect(0, 0, canvas.width, canvas.height)
   drawGrid()
@@ -279,29 +317,37 @@ const animate = () => {
   animationFrameId = requestAnimationFrame(animate)
 }
 
-onMounted(async () => {
-  await nextTick();
-  setTimeout(() => {
-    initCanvas();
-    animate();
-    if (cometTimer) clearInterval(cometTimer); // 双重保障，先清再开
-    cometTimer = window.setInterval(createComet, 500);
-  }, 50); // 50ms 的延迟通常足够解决渲染竞争
+// 初始化函数
+const startAnimation = async () => {
+  await nextTick()
+  
+  if (!canvasRef.value) {
+    console.error('Canvas ref not available')
+    return
+  }
+  
+  const success = initCanvas()
+  if (!success) return
+  
+  isInitialized.value = true
+  animate()
+  
+  if (cometTimer) clearInterval(cometTimer)
+  cometTimer = window.setInterval(createComet, 500)
+}
+
+// 监听路由变化
+watch(() => route.fullPath, async () => {
+  cleanup()
+  await nextTick()
+  setTimeout(startAnimation, 100)
+})
+
+onMounted(() => {
+  setTimeout(startAnimation, 50)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('resize', resizeCanvas)
-  //cancelAnimationFrame(animationFrameId)
-  if (animationFrameId) {
-    cancelAnimationFrame(animationFrameId);
-  }
-  // 💡 彻底清理定时器新增
-  if (cometTimer) {
-    clearInterval(cometTimer);
-    cometTimer = null;
-  }
-  comets.value = []; //// 💡 清空彗星数组，释放内存新增
+  cleanup()
 })
 </script>
-
-
