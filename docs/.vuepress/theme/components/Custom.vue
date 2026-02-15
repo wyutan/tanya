@@ -113,7 +113,7 @@ canvas {
 
 <script setup lang="ts">
 import {ref, onMounted, onUnmounted} from 'vue'
-//import AboutMe from "./AboutMe.vue";
+import AboutMe from "./AboutMe.vue";
 import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
