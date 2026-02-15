@@ -76,6 +76,7 @@ canvas {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 20px;
+  align-items: stretch !important; /* 💡 强制左右等高 */
   @media screen and (max-width: 770px) {
     display: flex;
     flex-direction: column;
