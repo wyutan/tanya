@@ -350,4 +350,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    line-height: 1.4 !important; /* 解决换行重叠，让文字间距更舒适 */
+    display: inline-block;       /* 确保 margin 和布局属性在换行时生效 */
+    margin-top: 10px;            /* 给上方文字留出呼吸空间 */
 }
