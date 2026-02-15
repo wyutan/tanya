@@ -28,8 +28,8 @@
 
 <script setup>
 import {ref} from 'vue';
-
-
+import { Icon } from '@iconify/vue';
+  
 const technology = ref([
   {type: 'Route', icon: '/Router.svg'},
   {type: 'Switch', icon: '/Switch.svg'},
