@@ -7,8 +7,8 @@
     <p class="about-me-card-title-normal">𝒸𝒽𝒶𝓇𝒶𝒸𝓉𝑒𝓇</p>
     <div class="about-me-character-content">
       <div class="about-me-character-type">
-        <p class="about-me-card-text-big about-me-card-text-color">守卫者</p>
-        <p class="about-me-card-text-big">ISFJ-T</p>
+        <p class="about-me-card-text-big about-me-card-text-color">逻辑学家</p>
+        <p class="about-me-card-text-big">INTP-A</p>
       </div>
       <div class="about-me-character-img">
       </div>
@@ -42,7 +42,7 @@
   transition: transform 1s;
   width: fit-content;
   min-height: 110px;
-  background-image: url("https://www.16personalities.com/static/images/personality-types/avatars/email/large/ISFJ_male.png?v=1");
+  background-image: url("https://www.16personalities.com/static/images/personality-types/avatars/email/large/INTP_male.png?v=1");
   background-position: right bottom;
   background-size: contain;
   background-repeat: no-repeat;
