@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :key="$route.fullPath" class="container">
     <canvas ref="canvasRef"></canvas>
 
 
