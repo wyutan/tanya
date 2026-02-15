@@ -26,7 +26,7 @@
   > p {
     color: var(--vp-c-text-1);
     margin-top: 0rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0rem;
   }
 }
 
