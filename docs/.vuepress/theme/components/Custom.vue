@@ -112,7 +112,8 @@ import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
-
+import { nextTick } from 'vue' // 💡 必须引入
+  
 let cometTimer: number | null = null; // 💡 定义定时器持有者新增
 
 interface Comet {
@@ -278,11 +279,14 @@ const animate = () => {
   animationFrameId = requestAnimationFrame(animate)
 }
 
-onMounted(() => {
-  initCanvas()
-  animate()
-  // setInterval(createComet, 500)
-  cometTimer = window.setInterval(createComet, 500);   // 💡 将定时器赋值新增
+onMounted(async () => {
+  await nextTick();
+  setTimeout(() => {
+    initCanvas();
+    animate();
+    if (cometTimer) clearInterval(cometTimer); // 双重保障，先清再开
+    cometTimer = window.setInterval(createComet, 500);
+  }, 50); // 50ms 的延迟通常足够解决渲染竞争
 })
 
 onUnmounted(() => {
