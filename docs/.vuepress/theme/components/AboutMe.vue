@@ -25,14 +25,14 @@
 
   > p {
     color: var(--vp-c-text-1);
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
   }
 }
 
 .about-me-card-text-big {
-  font-size: 2.2rem;   /* 设置为约2倍大小 */
+  font-size: 2rem;   /* 设置为约2倍大小 */
   font-weight: 800;    /* 极粗体 */
-  line-height: 1.2;    /* 大字体建议调小行高，视觉更紧凑 */
+  line-height: 1.1;    /* 大字体建议调小行高，视觉更紧凑 */
 }
 </style>
