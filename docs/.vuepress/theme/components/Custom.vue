@@ -80,8 +80,11 @@ canvas {
   @media screen and (max-width: 770px) {
     display: flex;
     flex-direction: column;
-
   }
+}
+
+.about-me-3-2-row > * {
+  height: 100%;
 }
 
 .about-me-1-1-row {
