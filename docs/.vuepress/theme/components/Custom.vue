@@ -102,7 +102,7 @@ canvas {
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import AboutMe from "./AboutMe.vue";
 import AboutMeText from "./AboutMeText.vue";
-import AboutMeSkill from "./AboutMeSkill.vue";
+//import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
 import { nextTick } from 'vue'
