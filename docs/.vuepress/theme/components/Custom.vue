@@ -71,7 +71,7 @@ canvas {
 .about-me-3-2-row {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   gap: 20px;
   @media screen and (max-width: 770px) {
     display: flex;
