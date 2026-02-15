@@ -48,28 +48,32 @@
 
 <style scoped>
 .container {
+  position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
+  min-height: 100vh;
+  //height: 100%;
+  //overflow-x: hidden !important;
+  //overflow-y: hidden !important;
 }
 
 canvas {
   z-index: -1;
   position: fixed;
-  top: -1px;
-  left: -1px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none; /* 允许鼠标事件穿透 */
-  overflow: hidden;
 }
 
 .about-me {
+  position: relative;
+  z-index: 2; /* 确保内容在 Canvas 之上 */
   max-width: 1380px;
   margin: 0 auto;
+  padding: 40px 0; /* 给顶部留点间距，别顶着头 */
   width: 90%;
-  @media screen and (max-width: 770px) {
-    width: 94%;
   }
 }
 
