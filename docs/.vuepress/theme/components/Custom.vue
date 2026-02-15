@@ -113,6 +113,8 @@ import AboutMeSkill from "./AboutMeSkill.vue";
 import AboutMeCharacter from "./AboutMeCharacter.vue";
 import AboutMeLife from "./AboutMeLife.vue";
 
+let cometTimer: number | null = null; // 💡 定义定时器持有者新增
+
 interface Comet {
   direction: 'horizontal' | 'vertical'
   position: number
@@ -279,12 +281,22 @@ const animate = () => {
 onMounted(() => {
   initCanvas()
   animate()
-  setInterval(createComet, 500)
+  // setInterval(createComet, 500)
+  cometTimer = window.setInterval(createComet, 500);   // 💡 将定时器赋值新增
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', resizeCanvas)
-  cancelAnimationFrame(animationFrameId)
+  //cancelAnimationFrame(animationFrameId)
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+  }
+  // 💡 彻底清理定时器新增
+  if (cometTimer) {
+    clearInterval(cometTimer);
+    cometTimer = null;
+  }
+  comets.value = []; //// 💡 清空彗星数组，释放内存新增
 })
 </script>
 
