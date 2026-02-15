@@ -46,7 +46,7 @@
   width: 100%;
   height: 100%;
   overflow-x: hidden !important;
-  overflow-y: hidden !important;
+  overflow-y: auto !important;
 }
 
 canvas {
