@@ -28,7 +28,6 @@
 
 <script setup>
 import {ref} from 'vue';
-import { Icon } from '@iconify/vue';
   
 const technology = ref([
   {type: 'Route', icon: '/Router.svg'},
@@ -37,15 +36,15 @@ const technology = ref([
   {type: 'WiFi', icon: '/wifi.svg'},
   {type: 'Linux', icon: '/linux.svg'},
   {type: 'Windows', icon: '/windows.svg'},
-  {type: 'Zabbix', icon: 'logos:zabbix'},
+  {type: 'Zabbix', icon: '/ZABBIX.svg'},
 ]);
 
 // https://icon-sets.iconify.design/?query=android
 const certifications = ref([
   {type: 'Cisco', icon: '/cisco.svg'},
   {type: 'PMP', icon: '/pmi_logo.svg'},
-  {type: 'Redhat', icon: 'logos:redhat-icon'},
-  {type: 'K8S', icon: 'skill-icons:kubernetes'},
+  {type: 'Redhat', icon: '/redhat.svg'},
+  {type: 'K8S', icon: '/k8s.svg'},
   {type: 'Huawei', icon: '/HUAWEI.svg'},
 ]);
 
