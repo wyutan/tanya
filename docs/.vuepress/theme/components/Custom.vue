@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import AboutMeLife from './AboutMeLife.vue'
-
+import AboutMe from "./AboutMe.vue";
+import AboutMeText from "./AboutMeText.vue";
+import AboutMeSkill from "./AboutMeSkill.vue";
+import AboutMeCharacter from "./AboutMeCharacter.vue";
+  
 </script>
 
 <template>
