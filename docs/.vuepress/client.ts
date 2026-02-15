@@ -5,8 +5,7 @@ import { defineClientConfig } from 'vuepress/client'
 // import Swiper from 'vuepress-theme-plume/features/Swiper.vue'
 
 import Custom from './theme/components/Custom.vue'
-
-// import './theme/styles/custom.css'
+import './theme/styles/index.css'
 
 export default defineClientConfig({
   enhance({ app }) {
