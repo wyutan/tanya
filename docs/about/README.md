@@ -1,7 +1,13 @@
 ---
-title: 关于
+title: 关于我
+layout: about
+# 这里是关键配置
+config:
+  avatar: /icon/logo.png  # 指定关于页显示的头像路径
+  name: 谈呀                 # 关于页显示的名称
+  description: 基础设施工程师     # 个人简介
+  location: '烟台'
 ---
-一个不专业的网络工程师，啥都想玩玩，啥都不精通
 
 ## 工作经历
 
