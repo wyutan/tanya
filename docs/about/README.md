@@ -15,25 +15,39 @@ article: false
   flex-direction: column-reverse;
   gap: 40px;
   margin-top: 20px;
-  width: 100%; /* 确保占满宽 */
+  width: 100%; 
 }
 
-@media (min-width: 960px) { /* 针对PC大屏调整 */
+/* --- 核心修改：大屏下的布局逻辑 --- */
+@media (min-width: 1200px) {
   .about-layout-container {
+    /* 强制突破父容器宽度限制，撑满屏幕 */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* 限制最大内容宽度为1400px（适配主流宽屏），防止左右分太开 */
+    max-width: 1400px; 
+    
+    /* 布局方向 */
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between; /* 关键：左右两端对齐，把卡片推到最右边 */
+    justify-content: center; /* 居中对齐，配合gap拉开距离 */
+    gap: 80px; /* 拉大中间间距，把卡片往右推 */
+    padding: 0 40px;
   }
   
   .about-main-col {
-    flex: 1; /* 左侧内容占满剩余空间 */
-    margin-right: 60px; /* 强制给右侧留出大间距，防止文字和卡片挨太近 */
-    min-width: 0; 
+    /* 限制左侧文字内容的宽度，防止阅读体验变差 */
+    width: 100%;
+    max-width: 800px; 
   }
   
   .about-sidebar-col {
-    width: 240px; /* 固定卡片宽度 */
-    flex-shrink: 0; /* 禁止卡片被压缩 */
+    /* 固定卡片宽度 */
+    width: 260px;
+    flex-shrink: 0;
   }
   
   .profile-card-sticky {
@@ -77,13 +91,13 @@ article: false
 .sidebar-title { margin-top: 4px; color: var(--vp-c-text-2); font-size: 0.9rem; }
 .sidebar-loc { margin-top: 12px; font-size: 0.85rem; color: var(--vp-c-text-3); }
 
-/* 社交链接区域 - 纯图标版 */
+/* 社交链接区域 */
 .sidebar-links {
   margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid var(--vp-c-divider);
   display: flex;
-  justify-content: center; /* 图标居中 */
+  justify-content: center; 
 }
 .gmail-link {
   display: inline-flex;
@@ -92,10 +106,10 @@ article: false
   transition: background-color 0.2s;
 }
 .gmail-link:hover {
-  background-color: var(--vp-c-bg-mute); /* 鼠标悬停显示背景 */
+  background-color: var(--vp-c-bg-mute); 
 }
 .icon-svg {
-  width: 32px; /* 加大了图标尺寸 */
+  width: 32px; 
   height: 32px;
   display: block;
 }
@@ -105,7 +119,7 @@ article: false
 .t-item {
   position: relative;
   padding-left: 24px;
-  margin-bottom: 32px; /* 增加条目间距 */
+  margin-bottom: 32px; 
   border-left: 2px solid var(--vp-c-brand-light, #3498db);
 }
 .t-item::before {
