@@ -11,7 +11,7 @@ export default defineUserConfig({
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/jpeg', href: '/icon/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/jpeg', href: 'https://www.16personalities.com/static/images/personality-types/avatars/email/large/ISFJ_male.png?v=1' }],
   ],
 
   bundler: viteBundler(),
