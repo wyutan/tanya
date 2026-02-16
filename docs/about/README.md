@@ -44,7 +44,7 @@ article: false
 
   <div class="about-sidebar">
     <div class="profile-card">
-      <img src="/icon/logo.png" alt="谈呀" class="avatar">
+      <img src="/icon/logo.png" alt="谈呀" class="avatar" />
       
       <div class="name">谈呀</div>
       <div class="title">基础设施工程师</div>
@@ -86,7 +86,7 @@ article: false
 /* 手机端适配：改为垂直排列 */
 @media (max-width: 768px) {
   .about-wrapper {
-    flex-direction: column-reverse; /* 手机上把头像放到内容上方 */
+    flex-direction: column-reverse;
     gap: 20px;
   }
   .about-sidebar {
@@ -115,7 +115,7 @@ article: false
   margin: 0 auto 16px;
   border: 4px solid var(--vp-c-bg);
   display: block;
-  object-fit: cover; /* 防止图片比例变形 */
+  object-fit: cover;
 }
 
 .name {
