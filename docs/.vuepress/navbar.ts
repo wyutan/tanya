@@ -1,14 +1,14 @@
 import { defineNavbarConfig } from 'vuepress-theme-plume'
 
 export const navbar = defineNavbarConfig([
-  { text: '首页', icon: 'mdi:home', link: '/', },
+  { text: '首页', icon: '', link: '/', },
   //{ text: '博客', link: '/blog/' },
   //{ text: '标签', link: '/blog/tags/' },
   //{ text: '归档', link: '/blog/archives/' },
   { text: '网络', icon: '', link: '/network/', },
   {
     text: 'os',
-    icon: 'ix:operating-system',
+    icon: '',
     items: [
       { text: 'linux', icon: '', link: '/os/linux/', },
       { text: '云计算', icon: '', link: '/os/cloud/', },
