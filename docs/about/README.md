@@ -1,6 +1,6 @@
 ---
 title: 关于我
-layout: Page  # 或者尝试 layout: Page
+layout: posts-aside-top  # 或者尝试 layout: Page
 sidebar: false   # 隐藏左侧文档侧边栏
 article: false   # 标记这不是一篇普通的文章
 ---
