@@ -4,7 +4,7 @@ externalLinkIcon: false
 config:
   -
     type: Custom
-    //type: hero
+    #type: hero
     full: true
     forceDark: true
     effect: hyper-speed
