@@ -13,7 +13,7 @@ export default defineThemeConfig({
   navbarSocialInclude: ['gmail'], // 允许显示在导航栏的 social 社交链接
     social: [
      {
-        icon: {svg: '/icon/Gmail.svg', name: 'gmail', },
+        icon: '/icon/Gmail.svg',
         link: 'mailto:wyu.tan99@gmail.com'
       },
     ],
