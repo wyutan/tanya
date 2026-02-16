@@ -1,38 +1,12 @@
 <template>
-  <div :key="$route.fullPath" class="container">
-    <canvas ref="canvasRef"></canvas>
+  <div class="container">
+    <!-- 添加 v-if="mounted"，只在客户端渲染 Canvas -->
+    <canvas v-if="mounted" ref="canvasRef"></canvas>
 
     <div class="about-me">
-      <div class="about-me-3-2-row">
-        <AboutMe/>
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <p class="about-me-card-title-normal">𝓂𝑜𝓉𝓉𝑜</p>
-              <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电,是不羁的灵魂</p>
-            </slot>
-          </template>
-        </AboutMeText>
-      </div>
-
-      <div class="about-me-3-2-row">
-        <AboutMeSkill/>
-        <AboutMeLife/>
-      </div>
-
-      <div class="about-me-1-1-row">
-        <AboutMeText>
-          <template #motto>
-            <slot name="motto">
-              <p class="about-me-card-title-normal">𝓈𝓁𝑜𝑔𝒶𝓃</p>
-              <p class="about-me-card-text-big about-me-card-text-soft">去<span style="color: #3a5ccc">追寻</span>便好
-              </p>
-              <p class="about-me-card-text-big">哪怕是<span style="color: #d53737">须臾的光亮</span></p>
-            </slot>
-          </template>
-        </AboutMeText>
-        <AboutMeCharacter/>
-      </div>
+      <h1 style="padding: 50px; color: red; background: white;">
+        测试页面 - 如果能看到我，说明基础渲染正常
+      </h1>
     </div>
   </div>
 </template>
@@ -41,7 +15,7 @@
 .container {
   z-index: 1;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   overflow-x: hidden !important;
   overflow-y: auto !important;
 }
@@ -49,66 +23,29 @@
 canvas {
   z-index: -1;
   position: fixed;
-  top: -1px;
-  left: -1px;
-  pointer-events: none; /* 允许鼠标事件穿透 */
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
 }
 
 .about-me {
   max-width: 1380px;
   margin: 0 auto;
   width: 90%;
-  @media screen and (max-width: 770px) {
-    width: 94%;
-  }
-}
-
-.about-me-3-2-row {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 20px;
-  @media screen and (max-width: 770px) {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.about-me-1-1-row {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  @media screen and (max-width: 770px) {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.about-me-1-row {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  @media screen and (max-width: 770px) {
-    display: flex;
-    flex-direction: column;
-  }
+  padding-top: 20px;
 }
 </style>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-//import AboutMe from "./AboutMe.vue";
-//import AboutMeText from "./AboutMeText.vue";
-//import AboutMeSkill from "./AboutMeSkill.vue";
-//import AboutMeCharacter from "./AboutMeCharacter.vue";
-//import AboutMeLife from "./AboutMeLife.vue";
+import { ref, onMounted, onUnmounted } from 'vue'
 import { nextTick } from 'vue'
-import { useRoute } from 'vue-router'
 
-// 变量声明 - 每个只声明一次
+// 添加 mounted 标记
+const mounted = ref(false)
+
+// 变量声明
 let cometTimer: number | null = null
 let animationFrameId: number | null = null
 
@@ -125,30 +62,23 @@ const linesGap = 20
 const comets = ref<Comet[]>([])
 const mouseX = ref(-1)
 const mouseY = ref(-1)
-const route = useRoute()
 const isInitialized = ref(false)
 
 // 清理函数
 const cleanup = () => {
-  // 清理动画帧
   if (animationFrameId !== null) {
     cancelAnimationFrame(animationFrameId)
     animationFrameId = null
   }
   
-  // 清理定时器
   if (cometTimer !== null) {
     clearInterval(cometTimer)
     cometTimer = null
   }
 
-  // 清理事件监听
   window.removeEventListener('resize', resizeCanvas)
-  
-  // 清空彗星数组
   comets.value = []
   
-  // 清空 canvas
   if (ctx.value && canvasRef.value) {
     ctx.value.clearRect(0, 0, canvasRef.value.width, canvasRef.value.height)
   }
@@ -172,7 +102,6 @@ const initCanvas = () => {
   ctx.value = context
   resizeCanvas()
   
-  // 防止重复绑定
   window.removeEventListener('resize', resizeCanvas)
   window.addEventListener('resize', resizeCanvas)
   
@@ -302,7 +231,6 @@ const drawComet = (comet: Comet) => {
 const animate = () => {
   const canvas = canvasRef.value
   const context = ctx.value
-  // 添加初始化检查，防止清理后继续运行
   if (!canvas || !context || !isInitialized.value) return
 
   context.clearRect(0, 0, canvas.width, canvas.height)
@@ -336,15 +264,11 @@ const startAnimation = async () => {
   cometTimer = window.setInterval(createComet, 500)
 }
 
-// 监听路由变化
-watch(() => route.fullPath, async () => {
-  cleanup()
-  await nextTick()
-  setTimeout(startAnimation, 100)
-})
-
 onMounted(() => {
-  setTimeout(startAnimation, 50)
+  // 先设置 mounted 为 true，让 Canvas 渲染
+  mounted.value = true
+  // 然后启动动画
+  setTimeout(startAnimation, 100)
 })
 
 onUnmounted(() => {
