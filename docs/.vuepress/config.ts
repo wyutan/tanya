@@ -139,9 +139,9 @@ export default defineUserConfig({
       fullPage: false,
 
       /** @see https://zhensherlock.github.io/watermark-js-plus/zh/config/ */
-      //watermarkOptions: {
-        //content: '谈呀',
-      //}
+      watermarkOptions: {
+        content: '谈呀',
+      }
     },
   }),
 })
