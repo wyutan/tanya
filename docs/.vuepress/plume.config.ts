@@ -6,8 +6,8 @@ import notes from './notes/index.ts'
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
-  logo: 'https://theme-plume.vuejs.press/plume.png',
-
+  //logo: 'https://theme-plume.vuejs.press/plume.png',
+  logo: '/icon/logo.jpeg',
   appearance: true,  // 配置 深色模式
 
   navbarSocialInclude: ['gmail'], // 允许显示在导航栏的 social 社交链接
