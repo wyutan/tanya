@@ -6,14 +6,14 @@ aside: false
 article: false
 ---
 
-<div class="about-layout-container"><div class="about-main-col"><h2 class="section-title"><span class="icon">👨‍💻</span> 工作经历</h2><div class="timeline-box"><div class="t-item"><div class="t-time">2023.5 - 至今</div><div class="t-role">企业运维</div><div class="t-desc">负责企业内部基础设施建设与维护。</div></div><div class="t-item"><div class="t-time">2021.8 - 2023.5</div><div class="t-role">银行运维</div><div class="t-desc">负责金融数据中心基础设施高可用保障。</div></div><div class="t-item"><div class="t-time">2016.6 - 2021.8</div><div class="t-role">集成商</div><div class="t-desc">参与多个大型网络集成项目实施与交付。</div></div></div><h2 class="section-title"><span class="icon">📜</span> 专业证书</h2><div class="cert-box"><span class="c-tag">CCIE R&S</span><span class="c-tag">PMP</span><span class="c-tag">CKA</span><span class="c-tag">RHCE</span><span class="c-tag">HCIE Storage</span></div><h2 class="section-title"><span class="icon">👥</span> 贡献者</h2><div class="contributors-box"><a href="https://github.com/wyutan" target="_blank"><img src="https://github.com/wyutan.png" alt="wyutan" style="width:40px;height:40px;border-radius:50%;" /></a></div></div><div class="about-sidebar-col"><div class="profile-card-sticky"><img src="/icon/logo.png" alt="谈呀" class="sidebar-avatar" /><div class="sidebar-name">谈呀</div><div class="sidebar-title">基础设施工程师</div><div class="sidebar-loc">📍 山东 · 烟台</div><div class="sidebar-links"><a href="mailto:wyu.tan99@gmail.com" class="gmail-link" title="wyu.tan99@gmail.com"><svg class="icon-svg" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path d="M69.12 929.28l153.6 30.72v-547.84c-51.2-37.376-102.4-75.264-153.6-112.64v629.76z" fill="#3399FF" /><path d="M514.56 632.32c-148.48-111.104-296.96-221.696-445.44-332.8-3.584-6.144-11.264-20.992-10.24-40.96 1.536-24.576 15.36-40.448 20.48-46.08 13.312-13.824 28.16-18.432 35.84-20.48 15.872-4.096 29.184-1.536 35.84 0 121.344 88.576 242.176 177.664 363.52 266.24 95.744-71.68 190.976-143.36 286.72-215.04v179.2c-95.744 70.144-190.976 139.776-286.72 209.92z" fill="#FF3333" /><path d="M954.88 929.28v-624.64c-51.2 39.424-102.4 78.336-153.6 117.76v542.72c51.2-11.776 102.4-24.064 153.6-35.84z" fill="#339966" /><path d="M801.28 243.2v174.08c51.2-37.376 102.4-75.264 153.6-112.64 1.536-11.776 3.584-24.064 5.12-35.84-0.512-8.704-2.56-26.112-15.36-40.96-9.216-10.752-19.968-15.872-30.72-20.48-16.384-7.168-31.232-9.728-40.96-10.24-24.064 15.36-47.616 30.72-71.68 46.08z" fill="#FFCC00" /></svg></a></div></div></div></div>
+<div class="about-layout-container"><div class="about-main-col"><h2 class="section-title"><span class="icon">👨‍💻</span> 工作经历</h2><div class="timeline-box"><div class="t-item"><div class="t-time">2023.5 - 至今</div><div class="t-role">企业运维</div><div class="t-desc">负责企业内部基础设施建设与维护。</div></div><div class="t-item"><div class="t-time">2021.8 - 2023.5</div><div class="t-role">银行运维</div><div class="t-desc">负责金融数据中心基础设施高可用保障。</div></div><div class="t-item"><div class="t-time">2016.6 - 2021.8</div><div class="t-role">集成商</div><div class="t-desc">参与多个大型网络集成项目实施与交付。</div></div></div><h2 class="section-title"><span class="icon">📜</span> 专业证书</h2><div class="cert-box"><span class="c-tag">CCIE R&S</span><span class="c-tag">PMP</span><span class="c-tag">CKA</span><span class="c-tag">RHCE</span><span class="c-tag">HCIE Storage</span></div></div><div class="about-sidebar-col"><div class="profile-card-sticky"><img src="/icon/logo.png" alt="谈呀" class="sidebar-avatar" /><div class="sidebar-name">谈呀</div><div class="sidebar-title">基础设施工程师</div><div class="sidebar-loc">📍 山东 · 烟台</div><div class="sidebar-links"><a href="mailto:wyu.tan99@gmail.com" class="gmail-link" title="wyu.tan99@gmail.com"><svg class="icon-svg" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="32" height="32"><path d="M69.12 929.28l153.6 30.72v-547.84c-51.2-37.376-102.4-75.264-153.6-112.64v629.76z" fill="#3399FF" /><path d="M514.56 632.32c-148.48-111.104-296.96-221.696-445.44-332.8-3.584-6.144-11.264-20.992-10.24-40.96 1.536-24.576 15.36-40.448 20.48-46.08 13.312-13.824 28.16-18.432 35.84-20.48 15.872-4.096 29.184-1.536 35.84 0 121.344 88.576 242.176 177.664 363.52 266.24 95.744-71.68 190.976-143.36 286.72-215.04v179.2c-95.744 70.144-190.976 139.776-286.72 209.92z" fill="#FF3333" /><path d="M954.88 929.28v-624.64c-51.2 39.424-102.4 78.336-153.6 117.76v542.72c51.2-11.776 102.4-24.064 153.6-35.84z" fill="#339966" /><path d="M801.28 243.2v174.08c51.2-37.376 102.4-75.264 153.6-112.64 1.536-11.776 3.584-24.064 5.12-35.84-0.512-8.704-2.56-26.112-15.36-40.96-9.216-10.752-19.968-15.872-30.72-20.48-16.384-7.168-31.232-9.728-40.96-10.24-24.064 15.36-47.616 30.72-71.68 46.08z" fill="#FFCC00" /></svg></a></div></div></div></div>
 
 <style>
 /* 1. 基础布局 (手机端优先) */
 .about-layout-container {
-  position: relative;
+  position: relative; /* 必须设为 relative，作为 absolute 子元素的定位基准 */
   display: flex;
-  flex-direction: column-reverse; /* 手机端：头像在上 */
+  flex-direction: column-reverse;
   gap: 40px;
   margin-top: 20px;
 }
@@ -21,28 +21,28 @@ article: false
 /* 2. 核心修正：PC端布局 (>1200px) */
 @media (min-width: 1200px) {
   .about-layout-container {
-    display: block; /* 恢复块级布局，不干扰内部居中 */
+    display: block; /* 恢复块级布局 */
   }
 
   /* --- 左侧内容：强制居中 --- */
   .about-main-col {
-    margin: 0 auto;       /* 自动居中 */
-    max-width: 780px;     /* 限制宽度，保持阅读体验，和之前一样 */
+    margin: 0 auto;
+    max-width: 780px; /* 保持原有的阅读宽度 */
     width: 100%;
   }
 
-  /* --- 右侧头像：基于中心点定位 --- */
+  /* --- 右侧头像：绝对定位 --- */
   .about-sidebar-col {
-    position: fixed;      /* 悬浮固定 */
-    top: 100px;           /* 距离顶部 */
-    left: 50%;            /* 定位到屏幕正中间 */
-    margin-left: 420px;   /* 向右偏移：780px/2 = 390px + 30px间距 */
-    width: 260px;         /* 卡片宽度 */
+    position: absolute;   /* 改为 absolute，相对于父容器定位 */
+    top: 0;               /* 顶部对齐：0 代表和父容器顶部边缘对齐 */
+    left: 50%;            /* 依然基于屏幕中心点 */
+    margin-left: 420px;   /* 向右偏移：780/2 + 30 = 420px */
+    width: 260px;
     z-index: 10;
   }
 }
 
-/* 3. 样式细节 (保持不变) */
+/* 3. 样式细节 */
 .section-title {
   display: flex; align-items: center; gap: 10px;
   font-size: 1.5rem; font-weight: bold;
