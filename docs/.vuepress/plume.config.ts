@@ -46,7 +46,7 @@ export default defineThemeConfig({
     name: 'My Vuepress Site',
     description: '',
     // circle: true,
-    // location: '',
+    location: '山东烟台',
     // organization: '',
   },
 
