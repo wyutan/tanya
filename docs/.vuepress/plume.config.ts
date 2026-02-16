@@ -41,10 +41,9 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/basic/#profile
    */
   profile: {
-    //avatar: 'https://theme-plume.vuejs.press/plume.png',
     avatar: '/icon/logo.png',
-    name: 'My Vuepress Site',
-    description: '',
+    name: '谈呀',
+    description: '基础设施工程师',
     // circle: true,
     location: '山东烟台',
     // organization: '',
