@@ -42,21 +42,21 @@
 import { ref } from 'vue';
 
 const technology = ref([
-  {type: 'Route', icon: '/Router.svg'},
-  {type: 'Switch', icon: '/Switch.svg'},
-  {type: 'FW', icon: '/防火墙.svg'},
-  {type: 'WiFi', icon: '/wifi.svg'},
-  {type: 'Linux', icon: '/linux.svg'},
-  {type: 'Windows', icon: '/windows.svg'},
-  {type: 'Zabbix', icon: '/ZABBIX.svg'}, // 确保 public 目录下有这个文件
+  {type: 'Route', icon: '/icon/Router.svg'},
+  {type: 'Switch', icon: '/icon/Switch.svg'},
+  {type: 'FW', icon: '/icon/防火墙.svg'},
+  {type: 'WiFi', icon: '/icon/wifi.svg'},
+  {type: 'Linux', icon: '/icon/linux.svg'},
+  {type: 'Windows', icon: '/icon/windows.svg'},
+  {type: 'Zabbix', icon: '/icon/ZABBIX.svg'}, // 确保 public 目录下有这个文件
 ]);
 
 const certifications = ref([
-  {type: 'Cisco', icon: '/cisco.svg'},
-  {type: 'PMP', icon: '/pmi_logo.svg'},
-  {type: 'Redhat', icon: '/redhat.svg'}, // 确保 public 目录下有这个文件
-  {type: 'K8S', icon: '/k8s.svg'}, // 确保 public 目录下有这个文件
-  {type: 'Huawei', icon: '/HUAWEI.svg'},
+  {type: 'Cisco', icon: '/icon/cisco.svg'},
+  {type: 'PMP', icon: '/icon/pmi_logo.svg'},
+  {type: 'Redhat', icon: '/icon/redhat.svg'}, // 确保 public 目录下有这个文件
+  {type: 'K8S', icon: '/icon/k8s.svg'}, // 确保 public 目录下有这个文件
+  {type: 'Huawei', icon: '/icon/HUAWEI.svg'},
 ]);
 </script>
 
