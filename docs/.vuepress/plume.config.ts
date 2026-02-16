@@ -42,7 +42,8 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/basic/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
+    //avatar: 'https://theme-plume.vuejs.press/plume.png',
+    avatar: '/icon/logo.jpeg',
     name: 'My Vuepress Site',
     description: '',
     // circle: true,
