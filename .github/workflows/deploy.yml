@@ -9,7 +9,7 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 必须开启，否则无法写回更新后的版本号
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -23,28 +23,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'pnpm' # 开启缓存，加快后续构建速度
 
-      # 1. 先安装当前版本的依赖
+      # 1. 仅安装 package.json 中定义的依赖
       - name: Install Dependencies
-        run: |
-          pnpm install --no-frozen-lockfile
-          pnpm add markmap-lib markmap-toolbar markmap-view artplayer pyodide echarts
+        run: pnpm install
 
-      # 2. 运行 VuePress 专用升级工具，它会自动修改 package.json 中的版本号
-      - name: Run vp-update
-        run: pnpm dlx vp-update
-
-      # 3. 核心步骤：将 vp-update 修改后的 package.json 和新 lock 文件推回 GitHub
-      - name: Commit and Push Updates
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update theme and dependencies to latest"
-          file_pattern: 'package.json pnpm-lock.yaml'
-
-      # 4. 正常构建
+      # 2. 正常构建
       - name: Build VuePress site
         run: pnpm run docs:build
 
+      # 3. 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
