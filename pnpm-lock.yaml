@@ -54,9 +54,6 @@ importers:
       vuepress:
         specifier: 2.0.0-rc.26
         version: 2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.2.3)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3))
-      vuepress-plugin-iconify:
-        specifier: 0.8.0
-        version: 0.8.0(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.2.3)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3)))
       vuepress-theme-plume:
         specifier: 1.0.0-rc.190
         version: 1.0.0-rc.190(@types/markdown-it@14.1.2)(@vue/compiler-sfc@3.5.28)(artplayer@5.3.0)(echarts@6.0.0)(less@4.5.1)(markdown-it@14.1.1)(markmap-lib@0.18.12(markmap-common@0.18.9))(markmap-toolbar@0.18.12(markmap-common@0.18.9))(markmap-view@0.18.12(markmap-common@0.18.9))(ogl@1.0.11)(postprocessing@6.38.2(three@0.182.0))(pyodide@0.29.3)(qrcode@1.5.4)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(three@0.182.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.2.3)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3)))
@@ -2965,11 +2962,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  vuepress-plugin-iconify@0.8.0:
-    resolution: {integrity: sha512-Wk+/OPpLv77FeqeCKcazUPaT+0/EvrJE8LAEtCijM+2uxE+iNL0H2IOSfzTxqh9r9XyqoFGiVMF0v5uOAhyhcA==}
-    peerDependencies:
-      vuepress: ^2.0.0-rc.15
 
   vuepress-plugin-md-power@1.0.0-rc.190:
     resolution: {integrity: sha512-dWPdS6rBdmmagOIgF4REoEyJ7W6GJMV76pBm5GpN7fKbsxkbo71cRlF+um/cr7habxn7xH0+IIpSiPBVjLc2WQ==}
@@ -6215,14 +6207,6 @@ snapshots:
       '@vue/shared': 3.5.28
     optionalDependencies:
       typescript: 5.9.3
-
-  vuepress-plugin-iconify@0.8.0(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.2.3)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3))):
-    dependencies:
-      '@iconify/vue': 5.0.0(vue@3.5.28(typescript@5.9.3))
-      vue: 3.5.28(typescript@5.9.3)
-      vuepress: 2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.2.3)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3))
-    transitivePeerDependencies:
-      - typescript
 
   vuepress-plugin-md-power@1.0.0-rc.190(@types/markdown-it@14.1.2)(artplayer@5.3.0)(esbuild@0.27.3)(less@4.5.1)(markdown-it@14.1.1)(pyodide@0.29.3)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(vuepress@2.0.0-rc.26(@vuepress/bundler-vite@2.0.0-rc.26(@types/node@25.2.3)(less@4.5.1)(sass-embedded@1.97.3)(sass@1.97.3)(stylus@0.64.0)(typescript@5.9.3)(yaml@2.8.2))(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3))):
     dependencies:
