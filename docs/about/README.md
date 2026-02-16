@@ -10,35 +10,35 @@ article: false
   
   <div class="about-main">
 
-## 👨‍💻 工作经历
+    <h2>👨‍💻 工作经历</h2>
 
-<div class="timeline-item">
-  <div class="time">2023.5 - 至今</div>
-  <div class="role">企业运维</div>
-  <div class="desc">负责企业内部基础设施建设与维护。</div>
-</div>
+    <div class="timeline-item">
+      <div class="time">2023.5 - 至今</div>
+      <div class="role">企业运维</div>
+      <div class="desc">负责企业内部基础设施建设与维护。</div>
+    </div>
 
-<div class="timeline-item">
-  <div class="time">2021.8 - 2023.5</div>
-  <div class="role">银行运维</div>
-  <div class="desc">负责金融数据中心基础设施高可用保障。</div>
-</div>
+    <div class="timeline-item">
+      <div class="time">2021.8 - 2023.5</div>
+      <div class="role">银行运维</div>
+      <div class="desc">负责金融数据中心基础设施高可用保障。</div>
+    </div>
 
-<div class="timeline-item">
-  <div class="time">2016.6 - 2021.8</div>
-  <div class="role">集成商</div>
-  <div class="desc">参与多个大型网络集成项目实施与交付。</div>
-</div>
+    <div class="timeline-item">
+      <div class="time">2016.6 - 2021.8</div>
+      <div class="role">集成商</div>
+      <div class="desc">参与多个大型网络集成项目实施与交付。</div>
+    </div>
 
-## 📜 专业证书
+    <h2>📜 专业证书</h2>
 
-<div class="cert-container">
-  <span class="cert-tag ccie">CCIE R&S</span>
-  <span class="cert-tag pmp">PMP</span>
-  <span class="cert-tag cka">CKA</span>
-  <span class="cert-tag rhce">RHCE</span>
-  <span class="cert-tag hcie">HCIE Storage</span>
-</div>
+    <div class="cert-container">
+      <span class="cert-tag ccie">CCIE R&S</span>
+      <span class="cert-tag pmp">PMP</span>
+      <span class="cert-tag cka">CKA</span>
+      <span class="cert-tag rhce">RHCE</span>
+      <span class="cert-tag hcie">HCIE Storage</span>
+    </div>
 
   </div>
 
@@ -63,7 +63,6 @@ article: false
 </div>
 
 <style>
-/* 布局容器 */
 .about-wrapper {
   display: flex;
   gap: 40px;
@@ -71,19 +70,31 @@ article: false
   align-items: flex-start;
 }
 
-/* 左侧内容区 */
 .about-main {
   flex: 1;
   min-width: 0;
 }
 
-/* 右侧侧边栏区 */
+/* 标题样式微调，模仿 Markdown 的 h2 */
+.about-main h2 {
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+/* 第一个标题去掉顶部边距 */
+.about-main h2:first-child {
+  margin-top: 0;
+}
+
 .about-sidebar {
   width: 280px;
   flex-shrink: 0;
 }
 
-/* 手机端适配：改为垂直排列 */
 @media (max-width: 768px) {
   .about-wrapper {
     flex-direction: column-reverse;
@@ -94,7 +105,6 @@ article: false
   }
 }
 
-/* --- 卡片样式 --- */
 .profile-card {
   padding: 24px;
   border-radius: 12px;
@@ -148,9 +158,9 @@ article: false
   color: var(--vp-c-brand);
   font-weight: 600;
   font-size: 0.9rem;
+  text-decoration: none; /* 去掉链接下划线 */
 }
 
-/* --- 时间轴经历样式 --- */
 .timeline-item {
   position: relative;
   padding-left: 20px;
@@ -173,7 +183,6 @@ article: false
   color: var(--vp-c-text-2);
 }
 
-/* --- 证书标签样式 --- */
 .cert-container {
   display: flex;
   flex-wrap: wrap;
