@@ -5,13 +5,13 @@ export const navbar = defineNavbarConfig([
   //{ text: '博客', link: '/blog/' },
   //{ text: '标签', link: '/blog/tags/' },
   //{ text: '归档', link: '/blog/archives/' },
-  { text: '网络', icon: 'lucide:network', link: '/network/', },
+  { text: '网络', icon: '', link: '/network/', },
   {
     text: 'os',
     icon: 'ix:operating-system',
     items: [
-      { text: 'linux', icon: 'skill-icons:linux-light', link: '/os/linux/', },
-      { text: '云计算', icon: 'uil:cloud-computing', link: '/os/cloud/', },
+      { text: 'linux', icon: '', link: '/os/linux/', },
+      { text: '云计算', icon: '', link: '/os/cloud/', },
     ]
   }, 
   { text: '存储', icon: '', link: '/storage/', },
