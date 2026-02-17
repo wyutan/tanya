@@ -25,8 +25,28 @@ export default defineUserConfig({
     collections: [
       {
         type: 'post', // 替代原博客功能
-        dir: '/', // 指向 docs/blog 目录
-        title: 'test' // 集合显示名称
+        dir: '/about', // 指向 docs/blog 目录
+        title: '关于' // 集合显示名称
+      },
+      {
+        type: 'post', // 替代原博客功能
+        dir: '/network', // 指向 docs/blog 目录
+        title: '网络' // 集合显示名称
+      },
+      {
+        type: 'post', // 替代原博客功能
+        dir: '/os', // 指向 docs/blog 目录
+        title: '系统' // 集合显示名称
+      },
+      {
+        type: 'post', // 替代原博客功能
+        dir: '/storage', // 指向 docs/blog 目录
+        title: '存储' // 集合显示名称
+      },
+      {
+        type: 'post', // 替代原博客功能
+        dir: '/容器', // 指向 docs/blog 目录
+        title: '容器' // 集合显示名称
       },
     ],
 
