@@ -44,7 +44,7 @@ export default defineThemeConfig({
     avatar: '/icon/logo.png',
     name: '谈呀',
     description: '基础设施工程师',
-    circle: true,
+    circle: false,
     location: '山东烟台',
     // organization: '',
   },
