@@ -29,10 +29,15 @@ export default defineUserConfig({
         title: '' // 集合显示名称
       },
     ],
-
+    
+    //docsRepo: 'https://github.com/wyutan/tanya/',
+    //docsDir: 'docs',
+    changelog: { maxCount: 10 },
+    
     /* 页内信息 */
     editLink: false,
     lastUpdated: true,
+    lastUpdatedText: '上次修改于',
     //contributors: {
       //mode: 'block',
       //info: [
@@ -47,10 +52,6 @@ export default defineUserConfig({
      * @see https://theme-plume.vuejs.press/config/basic/#cache
      */  
     cache: 'filesystem',
-    
-    //docsRepo: 'https://github.com/wyutan/tanya/',
-    //docsDir: 'docs',
-    changelog: { maxCount: 10 },
     
     /**
      * 为 markdown 文件自动添加 frontmatter 配置
