@@ -43,7 +43,7 @@ export default defineThemeConfig({
   profile: {
     avatar: '/icon/logo.png',
     name: '谈呀',
-    description: '基础设施工程师 | CCIE | CISP | PMP | CKA | RHCE | HCIE',
+    description: '基础设施工程师<br>CCIE | CISP | PMP | CKA | RHCE | HCIE',
     circle: true,
     location: '山东烟台',
     organization: '集成商 | 银行 | 企业运维',
