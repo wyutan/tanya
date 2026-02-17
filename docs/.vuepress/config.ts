@@ -38,7 +38,7 @@ export default defineUserConfig({
 
       // 其它配置，根据服务提供商进行配置
       // ...
-    }
+    },
       
     //docsRepo: 'https://github.com/wyutan/tanya/',
     //docsDir: 'docs',
