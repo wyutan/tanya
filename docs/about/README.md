@@ -3,7 +3,7 @@ title: 联系我
 ---
 
 <div align="center">
-  <img src="/icon/Wechat.png" width="190" alt="微信二维码" />
+  <img src="/icon/Wechat.png" width="300" alt="微信二维码" />
   <br> 
   <p style="margin-top: 9px;">
     <img src="/icon/Wechat_logo.svg" width="20" style="vertical-align: middle; display: inline-block;" />
