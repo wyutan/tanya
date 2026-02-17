@@ -33,23 +33,23 @@ export default defineUserConfig({
     /* 页内信息 */
     editLink: false,
     lastUpdated: true,
-    contributors: {
-      mode: 'block',
-      info: [
-        {
-          username: 'wyutan', // github username
-          alias: ['tanya'], // 别名，本地 git 配置中的用户名
-        }
-      ]
-    },
+    //contributors: {
+      //mode: 'block',
+      //info: [
+        //{
+          //username: 'wyutan', // github username
+          //alias: ['tanya'], // 别名，本地 git 配置中的用户名
+        //}
+      //]
+    //},
     /**
      * 编译缓存，加快编译速度
      * @see https://theme-plume.vuejs.press/config/basic/#cache
      */  
     cache: 'filesystem',
     
-    docsRepo: 'https://github.com/wyutan/tanya/',
-    docsDir: 'docs',
+    //docsRepo: 'https://github.com/wyutan/tanya/',
+    //docsDir: 'docs',
     changelog: { maxCount: 10 },
     
     /**
@@ -68,6 +68,7 @@ export default defineUserConfig({
     */
      
     markdown: {
+      qrcode: true,       // 启用二维码
       abbr: true,         // 启用 abbr 语法  *[label]: content
       markmap: true,
       annotation: true,   // 启用 annotation 语法  [+label]: content
