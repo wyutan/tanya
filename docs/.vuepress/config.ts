@@ -27,8 +27,8 @@ export default defineUserConfig({
         type: 'post', // 替代原博客功能
         dir: '/', // 指向 docs/blog 目录
         title: '博客' // 集合显示名称
-        // ...
       },
+    ],
 
     /* 页内信息 */
     editLink: false,
