@@ -29,7 +29,17 @@ export default defineUserConfig({
         title: '' // 集合显示名称
       },
     ],
-    
+
+    comment: {
+      // 服务提供商
+      provider: 'Giscus', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
+      // 是否默认启用评论
+      comment: true,
+
+      // 其它配置，根据服务提供商进行配置
+      // ...
+    }
+      
     //docsRepo: 'https://github.com/wyutan/tanya/',
     //docsDir: 'docs',
     changelog: { maxCount: 10 },
