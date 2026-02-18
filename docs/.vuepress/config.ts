@@ -37,8 +37,8 @@ export default defineUserConfig({
       comment: true,
 
       // 其它配置，根据服务提供商进行配置
-      repo="wyutan/tanya",
-      repoId="R_kgDON8kaRA",
+      repo: "wyutan/tanya",
+      repoId: "R_kgDON8kaRA",
     },
       
     //docsRepo: 'https://github.com/wyutan/tanya/',
