@@ -37,10 +37,19 @@ export default defineUserConfig({
       comment: true,
 
       // 其它配置，根据服务提供商进行配置
-      repo: "wyutan/tanya",
-      repoId: "R_kgDON8kaRA",
-      category: 'General', 
-      categoryId: 'DIC_kwDON8kaRM4C2q89', 
+      giscus: {
+        repo: "wyutan/tanya",
+        repoId: "R_kgDON8kaRA",
+        category: 'General',
+        categoryId: 'DIC_kwDON8kaRM4C2q89',
+        
+        // 以下为推荐的常用可选配置，保持默认即可
+        mapping: 'pathname', // 页面映射规则
+        reactionsEnabled: true, // 是否启用表情反应
+        emitMetadata: false,
+        inputPosition: 'top',
+        lang: 'zh-CN',
+      },
     },
       
     //docsRepo: 'https://github.com/wyutan/tanya/',
