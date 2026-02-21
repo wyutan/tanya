@@ -9,21 +9,8 @@
       <p class="about-me-card-text-big">你可以叫我 𝓽𝓪𝓷𝓽𝓪𝓷 .</p>
       <p>是一名努力奔向全栈的基础设施工程师。</p>
       <div></router-link>
-        
-      <div class="video-wrapper">
-        <video 
-          controls 
-          width="100%" 
-          poster="https://artplayer.org/assets/sample/poster.jpg"
-          class="inline-video"
-          >
-          <source src="https://artplayer.org/assets/sample/video.mp4" type="video/mp4">
-        </video>
     </div>
-  
-
-
-</template>
+  </template>
 
 <style scoped>
 .about-me-name {
