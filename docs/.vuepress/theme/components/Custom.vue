@@ -2,8 +2,11 @@
   <div class="container">
     <canvas ref="canvasRef"></canvas>
 
-
     <div class="about-me">
+      <div class="top-disclaimer">
+        <span class="icon">⚠️</span>
+        声明：如博客内容涉及侵权请联系删除
+      </div>
       <div class="about-me-3-2-row">
         <AboutMe/>
         <AboutMeText>
@@ -112,6 +115,39 @@ canvas {
   }
 }
 
+.top-disclaimer {
+  width: 100%;
+  margin: 20px 0 10px 0; /* 距离顶部20px，距离下方内容10px */
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.4); /* 浅色半透明 */
+  backdrop-filter: blur(4px); /* 毛玻璃效果，非常适合有背景的项目 */
+  border: 1px dashed rgba(100, 190, 190, 0.5);
+  border-radius: 8px;
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-disclaimer .icon {
+  font-size: 16px;
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .top-disclaimer {
+  background: rgba(0, 0, 0, 0.3);
+  color: #aaa;
+  border-color: rgba(30, 120, 120, 0.5);
+}
+
+/* 移动端间距微调 */
+@media screen and (max-width: 770px) {
+  .top-disclaimer {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}
 
 </style>
 
