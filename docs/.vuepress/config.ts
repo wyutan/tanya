@@ -24,7 +24,7 @@ export default defineUserConfig({
 
     collections: [
       { type: 'post', dir: '/about', title: '' },
-      { type: 'doc', dir: '/os/linux', title: 'Linux学习笔记', sidebar: 'auto' }
+      { type: 'doc', dir: '/', title: '', sidebar: 'auto' }
     ],
     comment: {
     provider: 'Giscus',
