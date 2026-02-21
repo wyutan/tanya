@@ -22,13 +22,13 @@ export default defineUserConfig({
     hostname: 'http://git.x-echo.net',
     search: { provider: 'local' },
 
-    collections: [
-      {
-        type: 'post', // 替代原博客功能
-        dir: '/about', // 指向 docs/blog 目录
-        title: '' // 集合显示名称
-      },
-    ],
+    //collections: [
+      //{
+        //type: 'post', // 替代原博客功能
+        //dir: '/about', // 指向 docs/blog 目录
+        //title: '' // 集合显示名称
+      //},
+    //],
     comment: {
     provider: 'Giscus',
     comment: true,
