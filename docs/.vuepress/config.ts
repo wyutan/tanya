@@ -24,7 +24,7 @@ export default defineUserConfig({
 
     collections: [
       { type: 'post', dir: '/about', title: '' },
-      { type: 'doc', dir: '', title: '', sidebar: 'auto' }
+      { type: 'doc', dir: '/os', title: '', sidebar: 'auto' },
     ],
     comment: {
     provider: 'Giscus',
