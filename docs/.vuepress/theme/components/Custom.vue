@@ -13,13 +13,12 @@
               <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电，是不羁的灵魂</p>
               <div class="video-wrapper">
                 <iframe 
-                src="//player.bilibili.com/player.html?bvid=BV1FF411M7kF&page=1&high_quality=1&danmaku=0" 
-                allowfullscreen="true" 
-                scrolling="no" 
-                border="0" 
-                frameborder="no" 
-                framespacing="0"
-                class="bilibili-iframe"
+                src="https://www.youtube.com/embed/B5unCXpegAw?start=60" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen
+                class="youtube-iframe"
                 >
                 </iframe>
               </div>
