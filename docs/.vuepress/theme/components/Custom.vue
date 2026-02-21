@@ -11,7 +11,7 @@
             <slot name="motto">
               <p class="about-me-card-title-normal">𝓂𝑜𝓉𝓉𝑜</p>
               <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电，是不羁的灵魂</p>
-              <audio :src="/audio/The_Mass.mp3" controls></audio>
+              <audio src="/audio/The_Mass.mp3" controls autoplay></audio>
             </slot>
           </template>
           <script setup>
