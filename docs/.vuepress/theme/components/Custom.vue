@@ -18,7 +18,7 @@
                 poster="https://artplayer.org/assets/sample/poster.jpg"
                 class="inline-video"
                 >
-                <source src="https://artplayer.org/assets/sample/video.mp4" type="video/mp4">
+                <source src="【最美的瞬间（星空版）-哔哩哔哩】 https://b23.tv/aPgZuxf" type="video/mp4">
                 </video>
               </div>
             </slot>
