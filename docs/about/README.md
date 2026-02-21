@@ -1,7 +1,7 @@
 ---
 title: 联系我
 ---
-@[audioReader](/audio/The_Mass.mp3)
+@[artPlayer](https://artplayer.org/assets/sample/video.mp4)
 <div align="center">
   <img src="/icon/Wechat.png" width="300" alt="微信二维码" />
   <br> 
