@@ -10,7 +10,7 @@
           <template #motto>
             <slot name="motto">
               <p class="about-me-card-title-normal">𝓂𝑜𝓉𝓉𝑜</p>
-              <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电，是不羁的灵魂@[audioReader](/audio/The Mass.mps)</p>
+              <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电，是不羁的灵魂@[audioReader](/audio/The_Mass.mp3)</p>
             </slot>
           </template>
         </AboutMeText>
