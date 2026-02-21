@@ -8,6 +8,17 @@
       <p>𝐻𝑒𝓁𝓁𝑜, 𝓃𝒾𝒸𝑒 𝓉𝑜 𝓂𝑒𝑒𝓉 𝓎𝑜𝓊 !👋</p>
       <p class="about-me-card-text-big">你可以叫我 𝓽𝓪𝓷𝓽𝓪𝓷 .</p>
       <p>是一名努力奔向全栈的基础设施工程师。</p>
+      <div class="video-container">
+        <video 
+          src="https://artplayer.org/assets/sample/video.mp4" 
+          controls 
+          preload="metadata"
+          poster="" 
+          class="me-video"
+        >
+          您的浏览器不支持 video 标签。
+        </video>
+      </div>      
     </div></router-link>
   </template>
 
