@@ -42,7 +42,7 @@
   transition: transform 1s;
   width: fit-content;
   min-height: 110px;
-  background-image: url("/icon/INTP_male.png");
+  background-image: url("/icon/INTP_female.png");
   background-position: right bottom;
   background-size: contain;
   background-repeat: no-repeat;
