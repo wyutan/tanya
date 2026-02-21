@@ -1,7 +1,7 @@
 import { defineNotesConfig } from 'vuepress-theme-plume'
 import network from './network.ts'
 import linux from './linux.ts'
-import cloud from './cloud.ts'
+//import cloud from './cloud.ts'
 import storage from './storage.ts'
 import 容器 from './容器.ts'
 import about from './about'
@@ -12,9 +12,11 @@ export default defineNotesConfig({
   link: '/',
   // 在这里添加 note 配置
   notes: [
+    { dir: 'os/cloud', link: '/os/cloud', },
     network,
     linux,
-    cloud,
+    //cloud,
+    
     storage,
     容器,
     about,
