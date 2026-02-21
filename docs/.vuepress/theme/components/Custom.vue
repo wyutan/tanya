@@ -117,35 +117,37 @@ canvas {
 
 .top-disclaimer {
   width: 100%;
-  margin: 20px 0 10px 0; /* 距离顶部20px，距离下方内容10px */
-  padding: 10px 15px;
-  background: rgba(255, 255, 255, 0.4); /* 浅色半透明 */
-  backdrop-filter: blur(4px); /* 毛玻璃效果，非常适合有背景的项目 */
-  border: 1px dashed rgba(100, 190, 190, 0.5);
+  margin: 20px 0 10px 0;
+  padding: 12px 20px;
+  
+  /* 颜色调整 */
+  background: rgba(213, 55, 55, 0.05); /* 淡淡的红背景，呼应文字 */
+  border: 1px dashed rgba(213, 55, 55, 0.4); /* 红色虚线边框 */
+  color: #d53737; /* 使用你 slogon 中那样的红色 */
+  
+  /* 字体调整 */
+  font-size: 18px; /* 放大字体，原先通常是 13-14px */
+  font-weight: bold; /* 加粗显示 */
+  
   border-radius: 8px;
-  font-size: 13px;
-  color: #666;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  backdrop-filter: blur(4px);
 }
 
-.top-disclaimer .icon {
-  font-size: 16px;
-}
-
-/* 深色模式适配 */
+/* 深色模式下的适配 */
 [data-theme='dark'] .top-disclaimer {
-  background: rgba(0, 0, 0, 0.3);
-  color: #aaa;
-  border-color: rgba(30, 120, 120, 0.5);
+  background: rgba(213, 55, 55, 0.15);
+  color: #ff5f5f; /* 深色模式下颜色稍微亮一点，看得更清楚 */
+  border-color: rgba(213, 55, 55, 0.6);
 }
 
-/* 移动端间距微调 */
+/* 移动端稍微缩小一点，防止折行太厉害 */
 @media screen and (max-width: 770px) {
   .top-disclaimer {
-    margin-top: 10px;
-    font-size: 12px;
+    font-size: 16px;
+    padding: 10px;
   }
 }
 
