@@ -22,11 +22,14 @@ export default defineUserConfig({
     hostname: 'http://git.x-echo.net',
     search: { provider: 'local' },
 
-    //collections: [
-      //{ type: 'post', dir: '/about', title: '' },
-      //{ type: 'doc', dir: '/network', title: 'Linux学习笔记', sidebar: 'auto' },
-      //{ type: 'doc', dir: '/os/linux', title: 'Linux学习笔记', sidebar: 'auto' },
-    //],
+    collections: [
+      { type: 'post', dir: '/about', title: '' },
+      { type: 'doc', dir: '/network', title: '网络相关', sidebar: 'auto' },
+      { type: 'doc', dir: '/os/linux', title: 'Linux相关', sidebar: 'auto' },
+      { type: 'doc', dir: '/os/cloud', title: '云计算相关', sidebar: 'auto' },
+      { type: 'doc', dir: '/storage', title: '存储相关', sidebar: 'auto' },
+      { type: 'doc', dir: '/容器', title: '容器相关', sidebar: 'auto' },
+    ],
     comment: {
     provider: 'Giscus',
     comment: true,
