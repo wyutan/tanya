@@ -14,6 +14,9 @@
               <audio src="/audio/The_Mass.mp3" controls style="margin-top: 10px;"></audio>
             </slot>
           </template>
+          <script setup>
+            import myAudio from '@/assets/audio/The_Mass.mp3'
+          </script>
         </AboutMeText>
       </div>
 
