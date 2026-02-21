@@ -11,9 +11,10 @@
       <div class="video-container">
         <video 
           src="https://artplayer.org/assets/sample/video.mp4" 
-          controls 
-          preload="metadata"
-          poster="" 
+          autoplay 
+          muted
+          loop
+          playsinline
           class="me-video"
         >
           您的浏览器不支持 video 标签。
