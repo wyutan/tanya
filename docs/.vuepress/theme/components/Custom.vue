@@ -40,7 +40,7 @@
           <template #motto>
             <slot name="motto">
               <p class="about-me-card-title-normal">𝓈𝓁𝑜𝑔𝒶𝓃</p>
-              <p class="about-me-card-text-big about-me-card-text-soft">专业是<span style="color: #3a5ccc">锚</span>，兴趣是<span style="color: #3a5ccc">帆
+              <p class="about-me-card-text-big about-me-card-text-soft">专业是<span style="color: #3a5ccc">锚</span>，兴趣是<span style="color: #3a5ccc">帆</span>
               </p>
               <p class="about-me-card-text-big">探索的旅程<span style="color: #d53737">永无止境</span></p>
             </slot>
