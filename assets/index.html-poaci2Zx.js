@@ -1,0 +1,52 @@
+import{_ as a,c as n,a as e,o as i}from"./app-k1S79Pg5.js";const l={};function p(d,s){return i(),n("div",null,[...s[0]||(s[0]=[e(`<h2 id="s系列" tabindex="-1"><a class="header-anchor" href="#s系列"><span>S系列</span></a></h2><h3 id="初始化" tabindex="-1"><a class="header-anchor" href="#初始化"><span>初始化</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code class="language-"><span class="line"><span>system-view</span></span>
+<span class="line"><span>vlan vlanid</span></span>
+<span class="line"><span>interface vlanif vlanid</span></span>
+<span class="line"><span> ip address x.x.x.x y.y.y.y</span></span>
+<span class="line"><span> quit</span></span>
+<span class="line"><span>ip route-static 0.0.0.0 0.0.0.0 z.z.z.z</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>super password level 15 cipher passwd</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>aaa</span></span>
+<span class="line"><span>local-user username password irreversible-cipher passwd</span></span>
+<span class="line"><span>local-user username service-type ssh</span></span>
+<span class="line"><span>local-user username privilege level 1</span></span>
+<span class="line"><span>quit</span></span>
+<span class="line"><span>stelnet server enable</span></span>
+<span class="line"><span>ssh user username authentication-type password</span></span>
+<span class="line"><span>ssh user username service-type stelnet</span></span>
+<span class="line"><span>ssh server-source all-interface</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>user-interface vty 0 4</span></span>
+<span class="line"><span>authentication-mode aaa</span></span>
+<span class="line"><span>protocol inbound ssh</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>return</span></span>
+<span class="line"><span>save force</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="提权" tabindex="-1"><a class="header-anchor" href="#提权"><span>提权</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code class="language-"><span class="line"><span>command-privilege level x view shell dis cur</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><h3 id="dot1x" tabindex="-1"><a class="header-anchor" href="#dot1x"><span>dot1x</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code class="language-"><span class="line"><span>radius-server template qax</span></span>
+<span class="line"><span> radius-server authentication x.x.x.x 1812 weight 100</span></span>
+<span class="line"><span>&lt;!-- 默认80越大越优先 --&gt;</span></span>
+<span class="line"><span> radius-server authentication x.x.x.x 1812 </span></span>
+<span class="line"><span> radius-server accounting x.x.x.x 1813 weight 100</span></span>
+<span class="line"><span> radius-server accounting x.x.x.x 1813 </span></span>
+<span class="line"><span> radius-server shared-key cipher xxx</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>aaa</span></span>
+<span class="line"><span> authentication-scheme qax</span></span>
+<span class="line"><span> authentication-mode radius</span></span>
+<span class="line"><span>domain qax</span></span>
+<span class="line"><span> authentication-scheme qax</span></span>
+<span class="line"><span> radius-server qax</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>dot1x-access-profile name qax</span></span>
+<span class="line"><span> dot1x authentication-method eap</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>mac-access-profile name qax</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>authentication-profile name qax</span></span>
+<span class="line"><span> mac-access-profile qax</span></span>
+<span class="line"><span> dot1x-access-profile qax</span></span>
+<span class="line"><span> access-domain qax force</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>interface gigabitethernet 0/0/1</span></span>
+<span class="line"><span> authentication-profile qax</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="其他" tabindex="-1"><a class="header-anchor" href="#其他"><span>其他</span></a></h3><p>s系列ssh支持低安全性密钥算法</p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code class="language-"><span class="line"><span>load-module weakea</span></span>
+<span class="line"><span>\`根据回显输入后续命令\`</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div>`,10)])])}const r=a(l,[["render",p]]),c=JSON.parse('{"path":"/network/ek175y1x/","title":"hw_s | 网络相关","lang":"zh-CN","frontmatter":{"title":"hw_s","createTime":"2026/02/22 12:26:31","permalink":"/network/ek175y1x/","description":"S系列 初始化 提权 dot1x 其他 s系列ssh支持低安全性密钥算法","head":[["script",{"type":"application/ld+json"},"{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"hw_s\\",\\"image\\":[\\"\\"],\\"dateModified\\":\\"2025-03-17T03:56:50.000Z\\",\\"author\\":[]}"],["meta",{"property":"og:url","content":"http://git.x-echo.net/network/ek175y1x/"}],["meta",{"property":"og:site_name","content":"谈呀"}],["meta",{"property":"og:title","content":"hw_s"}],["meta",{"property":"og:description","content":"S系列 初始化 提权 dot1x 其他 s系列ssh支持低安全性密钥算法"}],["meta",{"property":"og:type","content":"article"}],["meta",{"property":"og:locale","content":"zh-CN"}],["meta",{"property":"og:updated_time","content":"2025-03-17T03:56:50.000Z"}],["meta",{"property":"article:modified_time","content":"2025-03-17T03:56:50.000Z"}]]},"readingTime":{"minutes":0.76,"words":227},"git":{"createdTime":1740042688000,"updatedTime":1742183810000,"contributors":[{"name":"wyutan","username":"wyutan","email":"90786339+wyutan@users.noreply.github.com","commits":5,"avatar":"https://avatars.githubusercontent.com/wyutan?v=4","url":"https://github.com/wyutan"}],"changelog":[{"hash":"652c43b5fc11db34a426a71aef756ba97fcb7d5d","time":1742183810000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"Update 1.hw_s.md"},{"hash":"95b9437bb81bbbd00685f013a76918c1321d093b","time":1741958835000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"更新 1.hw_s.md"},{"hash":"1bdc4f972fc0985abd2466b9c7f9db9e687afa92","time":1741958760000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"更新 1.hw_s.md"},{"hash":"970a61e02a76fb9a80dec544d9766746d2e5fc11","time":1740410620000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"Rename hw_s.md to 1.hw_s.md"},{"hash":"21c64a4309790e84e117ebe920a757e26fd0bcff","time":1740042688000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"Add files via upload"}]},"autoDesc":true,"filePathRelative":"network/template/1.hw_s.md","headers":[]}');export{r as comp,c as data};

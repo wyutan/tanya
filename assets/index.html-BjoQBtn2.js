@@ -1,0 +1,31 @@
+import{_ as n,c as s,a as e,o as i}from"./app-k1S79Pg5.js";const t={};function l(p,a){return i(),s("div",null,[...a[0]||(a[0]=[e(`<h2 id="dot1x" tabindex="-1"><a class="header-anchor" href="#dot1x"><span>dot1x</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code class="language-"><span class="line"><span>radius scheme qax</span></span>
+<span class="line"><span> primary authentication X.X.X.X</span></span>
+<span class="line"><span> secondary authentication X.X.X.X</span></span>
+<span class="line"><span> key authentication simple XXX</span></span>
+<span class="line"><span> key accounting simple XXX</span></span>
+<span class="line"><span> timer quiet 10</span></span>
+<span class="line"><span> timer response-timeout 5</span></span>
+<span class="line"><span> user-name-format without-domain</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>domain qax</span></span>
+<span class="line"><span> authentication lan-access radius-scheme qax</span></span>
+<span class="line"><span> authorization lan-access none</span></span>
+<span class="line"><span> accounting lan-access none</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>dot1x auth eap</span></span>
+<span class="line"><span>mac-authentication domain qax </span></span>
+<span class="line"><span>domain default enable qax</span></span>
+<span class="line"><span>#</span></span>
+<span class="line"><span>dot1x</span></span>
+<span class="line"><span>mac-authentication</span></span>
+<span class="line"><span>interface range GigabitEthernet1/0/1</span></span>
+<span class="line"><span> port link-mode bridge</span></span>
+<span class="line"><span> port link-type hybrid</span></span>
+<span class="line"><span> undo port hybrid vlan 1</span></span>
+<span class="line"><span> port hybrid vlan 2811 untagged</span></span>
+<span class="line"><span> port hybrid pvid vlan 2811</span></span>
+<span class="line"><span> mac-vlan enable</span></span>
+<span class="line"><span> stp edged-port</span></span>
+<span class="line"><span> dot1x</span></span>
+<span class="line"><span> mac-authentication</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="提权" tabindex="-1"><a class="header-anchor" href="#提权"><span>提权</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#393a34;--shiki-dark:#dbd7caee;--shiki-light-bg:#ffffff;--shiki-dark-bg:#121212;"><pre class="shiki shiki-themes vitesse-light vitesse-dark vp-code"><code class="language-"><span class="line"><span>rule name level-1</span></span>
+<span class="line"><span>rule 10 permit command screen-length disable</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div>`,4)])])}const d=n(t,[["render",l]]),r=JSON.parse('{"path":"/network/g91ojx9i/","title":"h3c | 网络相关","lang":"zh-CN","frontmatter":{"title":"h3c","createTime":"2026/02/22 12:26:31","permalink":"/network/g91ojx9i/","description":"dot1x 提权","head":[["script",{"type":"application/ld+json"},"{\\"@context\\":\\"https://schema.org\\",\\"@type\\":\\"Article\\",\\"headline\\":\\"h3c\\",\\"image\\":[\\"\\"],\\"dateModified\\":\\"2025-03-17T03:57:07.000Z\\",\\"author\\":[]}"],["meta",{"property":"og:url","content":"http://git.x-echo.net/network/g91ojx9i/"}],["meta",{"property":"og:site_name","content":"谈呀"}],["meta",{"property":"og:title","content":"h3c"}],["meta",{"property":"og:description","content":"dot1x 提权"}],["meta",{"property":"og:type","content":"article"}],["meta",{"property":"og:locale","content":"zh-CN"}],["meta",{"property":"og:updated_time","content":"2025-03-17T03:57:07.000Z"}],["meta",{"property":"article:modified_time","content":"2025-03-17T03:57:07.000Z"}]]},"readingTime":{"minutes":0.4,"words":119},"git":{"createdTime":1740042688000,"updatedTime":1742183827000,"contributors":[{"name":"wyutan","username":"wyutan","email":"90786339+wyutan@users.noreply.github.com","commits":5,"avatar":"https://avatars.githubusercontent.com/wyutan?v=4","url":"https://github.com/wyutan"}],"changelog":[{"hash":"0bc8b06355156c0cb5c8a6190ad612de89c7bdbb","time":1742183827000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"Update 3.h3c.md"},{"hash":"e49c699b3242a16df4c653ffbd0124e78bc95bb0","time":1741958823000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"更新 3.h3c.md"},{"hash":"859e07b3c24501c859390473d045ad70162ef8dc","time":1741958808000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"更新 3.h3c.md"},{"hash":"660d9fc8cbb8dcc2503ea87899de485711bd7a50","time":1740410656000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"Rename h3c.md to 3.h3c.md"},{"hash":"21c64a4309790e84e117ebe920a757e26fd0bcff","time":1740042688000,"email":"90786339+wyutan@users.noreply.github.com","author":"yu","message":"Add files via upload"}]},"autoDesc":true,"filePathRelative":"network/template/3.h3c.md","headers":[]}');export{d as comp,r as data};
