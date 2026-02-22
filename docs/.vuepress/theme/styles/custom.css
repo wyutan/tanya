@@ -51,7 +51,7 @@
 .vp-card, .custom-container, .vp-doc .custom-container {
   transition: all 0.3s ease; /* 让位移和阴影的变化变得平滑 */
   border: 1px solid transparent; /* 预留边框位，防止悬浮时闪烁 */
-  animation: card-breathing 4s ease-in-out infinite; /* 每4秒完成一次呼吸循环，增加呼吸效果  */
+  animation: card-breathing 3s ease-in-out infinite !important;
 }
 
 /* --- 在这里添加交错感代码 --- */
@@ -82,14 +82,15 @@
 
 /* 定义呼吸动画：极小幅度的上下浮动和阴影缩放 */
 @keyframes card-breathing {
-  0% {
+  0%, 100% {
     transform: translateY(0);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
   50% {
-    transform: translateY(-4px); /* 静止时的起伏幅度不要太大，保持优雅 */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-12px); /* 调大幅度到 12px 方便观察 */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
+}
   100% {
     transform: translateY(0);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
