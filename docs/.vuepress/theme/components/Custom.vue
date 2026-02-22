@@ -100,7 +100,7 @@ canvas {
 /* -------------------- 优化后的细边框浅色跑马灯 -------------------- */
 .marquee-card {
   position: relative;
-  padding: 1.5px; /* 边框调细 */
+  padding: 2px; /* 边框调细 */
   border-radius: 14px;
   overflow: hidden;
   display: flex;
@@ -123,7 +123,7 @@ canvas {
     rgba(255, 0, 255, 0.3),
     rgba(255, 0, 0, 0.3)
   );
-  animation: rotate-border 8s linear infinite; /* 速度放慢一点更显优雅 */
+  animation: rotate-border 6s linear infinite; /* 速度放慢一点更显优雅 */
   z-index: 0;
 }
 
