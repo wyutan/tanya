@@ -5,8 +5,9 @@
     <div class="about-me">
       <div class="top-disclaimer">
         <span class="icon">⚠️</span>
-        声明：如博客内容涉及侵权请联系删除
+        声明：如该网站内容涉及侵权请联系删除
       </div>
+      
       <div class="about-me-3-2-row">
         <AboutMe/>
         <AboutMeText>
@@ -31,8 +32,12 @@
       </div>
 
       <div class="about-me-3-2-row">
-        <AboutMeSkill/>
-        <AboutMeLife/>
+        <div class="marquee-card">
+          <AboutMeSkill/>
+        </div>
+        <div class="marquee-card">
+          <AboutMeLife/>
+        </div>
       </div>
 
       <div class="about-me-1-1-row">
@@ -49,8 +54,6 @@
         <AboutMeCharacter/>
       </div>
     </div>
-
-
   </div>
 </template>
 
@@ -68,7 +71,7 @@ canvas {
   position: fixed;
   top: -1px;
   left: -1px;
-  pointer-events: none; /* 允许鼠标事件穿透 */
+  pointer-events: none;
   overflow: hidden;
 }
 
@@ -76,9 +79,6 @@ canvas {
   max-width: 1380px;
   margin: 0 auto;
   width: 90%;
-  @media screen and (max-width: 770px) {
-    width: 94%;
-  }
 }
 
 .about-me-3-2-row {
@@ -86,11 +86,6 @@ canvas {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 20px;
-  @media screen and (max-width: 770px) {
-    display: flex;
-    flex-direction: column;
-
-  }
 }
 
 .about-me-1-1-row {
@@ -98,18 +93,79 @@ canvas {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  @media screen and (max-width: 770px) {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
-.about-me-1-row {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  @media screen and (max-width: 770px) {
+/* -------------------- 跑马灯边框核心 CSS -------------------- */
+.marquee-card {
+  position: relative;
+  padding: 2px; /* 边框宽度 */
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+}
+
+/* 旋转的流光背景 */
+.marquee-card::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  /* 渐变配色：透明-主题色-高亮-主题色-透明 */
+  background: conic-gradient(
+    transparent,
+    rgba(77, 208, 225, 0.6), 
+    #ffffff, 
+    rgba(77, 208, 225, 0.6),
+    transparent 30%
+  );
+  animation: rotate-border 4s linear infinite;
+  z-index: 0;
+}
+
+/* 内部遮罩，露出下方的背景网格 */
+.marquee-card::after {
+  content: '';
+  position: absolute;
+  inset: 2px; /* 与 padding 保持一致 */
+  background: var(--main-card-background); /* 使用你定义的全局背景变量 */
+  border-radius: 12px;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+/* 确保内部组件显示在最顶层 */
+.marquee-card > * {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 悬停效果：加速旋转并改变颜色 */
+.marquee-card:hover::before {
+  animation-duration: 1.5s;
+  background: conic-gradient(
+    transparent,
+    #00f2ff, 
+    #ffcc00, /* 悬停时加入闪电金 */
+    #00f2ff,
+    transparent 30%
+  );
+}
+
+@keyframes rotate-border {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* -------------------- 移动端适配 -------------------- */
+@media screen and (max-width: 770px) {
+  .about-me { width: 94%; }
+  .about-me-3-2-row, .about-me-1-1-row {
     display: flex;
     flex-direction: column;
   }
@@ -119,16 +175,11 @@ canvas {
   width: 100%;
   margin: 20px 0 10px 0;
   padding: 12px 20px;
-  
-  /* 颜色调整 */
-  background: rgba(213, 55, 55, 0.05); /* 淡淡的红背景，呼应文字 */
-  border: 1px dashed rgba(213, 55, 55, 0.4); /* 红色虚线边框 */
-  color: #d53737; /* 使用你 slogon 中那样的红色 */
-  
-  /* 字体调整 */
-  font-size: 18px; /* 放大字体，原先通常是 13-14px */
-  font-weight: bold; /* 加粗显示 */
-  
+  background: rgba(213, 55, 55, 0.05);
+  border: 1px dashed rgba(213, 55, 55, 0.4);
+  color: #d53737;
+  font-size: 18px;
+  font-weight: bold;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -136,26 +187,15 @@ canvas {
   backdrop-filter: blur(4px);
 }
 
-/* 深色模式下的适配 */
 [data-theme='dark'] .top-disclaimer {
   background: rgba(213, 55, 55, 0.15);
-  color: #ff5f5f; /* 深色模式下颜色稍微亮一点，看得更清楚 */
+  color: #ff5f5f;
   border-color: rgba(213, 55, 55, 0.6);
 }
-
-/* 移动端稍微缩小一点，防止折行太厉害 */
-@media screen and (max-width: 770px) {
-  .top-disclaimer {
-    font-size: 16px;
-    padding: 10px;
-  }
-}
-
 </style>
 
-
 <script setup lang="ts">
-import {ref, onMounted, onUnmounted} from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import AboutMe from "./AboutMe.vue";
 import AboutMeText from "./AboutMeText.vue";
 import AboutMeSkill from "./AboutMeSkill.vue";
@@ -180,7 +220,6 @@ let animationFrameId: number
 const initCanvas = () => {
   const canvas = canvasRef.value
   if (!canvas) return
-
   ctx.value = canvas.getContext('2d')
   resizeCanvas()
   window.addEventListener('resize', resizeCanvas)
@@ -189,7 +228,6 @@ const initCanvas = () => {
 const resizeCanvas = () => {
   const canvas = canvasRef.value
   if (!canvas || !ctx.value) return
-
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
 }
@@ -198,14 +236,10 @@ const drawGrid = () => {
   const canvas = canvasRef.value
   const context = ctx.value
   if (!canvas || !context) return
-
   context.clearRect(0, 0, canvas.width, canvas.height)
   context.lineWidth = 1
-
-  // 绘制带渐变效果的网格
-  const radius = 100 // 颜色影响半径
+  const radius = 100
   const hasMouse = mouseX.value >= 0 && mouseY.value >= 0
-
   const theme = document.documentElement.getAttribute('data-theme');
   let baseColor = "100, 190, 190"
   let baseAlpha = 0.12
@@ -213,122 +247,65 @@ const drawGrid = () => {
     baseColor = "30, 120, 120"
     baseAlpha = 0.15
   }
-
-  // 水平线
   for (let y = 0; y < canvas.height; y += linesGap) {
-    context.beginPath()
-    context.moveTo(0, y)
-    context.lineTo(canvas.width, y)
-
+    context.beginPath(); context.moveTo(0, y); context.lineTo(canvas.width, y)
     let alpha = baseAlpha
     if (hasMouse) {
       const dy = Math.abs(y - mouseY.value)
-      if (dy < radius) {
-        alpha = baseAlpha + (1 - dy / radius) * (1 - baseAlpha)
-      }
+      if (dy < radius) alpha = baseAlpha + (1 - dy / radius) * (1 - baseAlpha)
     }
-
-    context.strokeStyle = `rgba(${baseColor}, ${alpha})`
-    context.stroke()
+    context.strokeStyle = `rgba(${baseColor}, ${alpha})`; context.stroke()
   }
-
-  // 垂直线
   for (let x = 0; x < canvas.width; x += linesGap) {
-    context.beginPath()
-    context.moveTo(x, 0)
-    context.lineTo(x, canvas.height)
-
+    context.beginPath(); context.moveTo(x, 0); context.lineTo(x, canvas.height)
     let alpha = baseAlpha
     if (hasMouse) {
       const dx = Math.abs(x - mouseX.value)
-      if (dx < radius) {
-        alpha = baseAlpha + (1 - dx / radius) * (1 - baseAlpha)
-      }
+      if (dx < radius) alpha = baseAlpha + (1 - dx / radius) * (1 - baseAlpha)
     }
-    context.strokeStyle = `rgba(${baseColor}, ${alpha})`
-    context.stroke()
+    context.strokeStyle = `rgba(${baseColor}, ${alpha})`; context.stroke()
   }
 }
 
-// 彗星函数
 const createComet = () => {
   const direction = Math.random() > 0.5 ? 'horizontal' : 'vertical'
-  const maxPosition = direction === 'horizontal'
-      ? Math.floor(window.innerHeight / linesGap)
-      : Math.floor(window.innerWidth / linesGap)
-
+  const maxPosition = direction === 'horizontal' ? Math.floor(window.innerHeight / linesGap) : Math.floor(window.innerWidth / linesGap)
   const position = Math.floor(Math.random() * maxPosition) * linesGap
-
   if (comets.value.length < 20) {
-    comets.value.push({
-      direction,
-      position,
-      progress: 0,
-      speed: Math.random() * 0.005 + 0.002,
-    })
+    comets.value.push({ direction, position, progress: 0, speed: Math.random() * 0.005 + 0.002 })
   }
 }
 
 const drawComet = (comet: Comet) => {
-  const context = ctx.value
-  const canvas = canvasRef.value
+  const context = ctx.value; const canvas = canvasRef.value
   if (!context || !canvas) return
-
-  const length = 80
-  const {direction, position, progress} = comet
-
-  if (direction === 'horizontal') {
-    const x = progress * canvas.width
-    const y = position
-
-    const gradient = context.createLinearGradient(x - length, y, x, y)
-    gradient.addColorStop(0, 'rgba(80, 134, 161, 0)')
-    gradient.addColorStop(0.4, 'rgba(80,134,161,0.3)')
-    gradient.addColorStop(1, '#4483a2')
-
-    context.strokeStyle = gradient
-    context.beginPath()
-    context.moveTo(x - length, y)
-    context.lineTo(x, y)
-    context.stroke()
-  } else {
-    const x = position
-    const y = progress * canvas.height
-
-    const gradient = context.createLinearGradient(x, y - length, x, y)
-    gradient.addColorStop(0, 'rgba(80, 134, 161, 0)')
-    gradient.addColorStop(0.4, 'rgba(80,134,161,0.3)')
-    gradient.addColorStop(1, '#4483a2')
-
-    context.strokeStyle = gradient
-    context.beginPath()
-    context.moveTo(x, y - length)
-    context.lineTo(x, y)
-    context.stroke()
-  }
+  const length = 80; const { direction, position, progress } = comet
+  const x = direction === 'horizontal' ? progress * canvas.width : position
+  const y = direction === 'horizontal' ? position : progress * canvas.height
+  const gradient = direction === 'horizontal' ? context.createLinearGradient(x - length, y, x, y) : context.createLinearGradient(x, y - length, x, y)
+  gradient.addColorStop(0, 'rgba(80, 134, 161, 0)'); gradient.addColorStop(1, '#4483a2')
+  context.strokeStyle = gradient; context.beginPath()
+  if (direction === 'horizontal') { context.moveTo(x - length, y); context.lineTo(x, y) }
+  else { context.moveTo(x, y - length); context.lineTo(x, y) }
+  context.stroke()
 }
 
 const animate = () => {
-  const canvas = canvasRef.value
-  const context = ctx.value
+  const canvas = canvasRef.value; const context = ctx.value
   if (!canvas || !context) return
-
   context.clearRect(0, 0, canvas.width, canvas.height)
   drawGrid()
-
   comets.value = comets.value.filter(comet => {
-    comet.progress += comet.speed
-    drawComet(comet)
+    comet.progress += comet.speed; drawComet(comet)
     return comet.progress < 1.2
   })
-
   animationFrameId = requestAnimationFrame(animate)
 }
 
 onMounted(() => {
-  initCanvas()
-  animate()
-  setInterval(createComet, 500)
+  initCanvas(); animate()
+  const timer = setInterval(createComet, 500)
+  onUnmounted(() => clearInterval(timer))
 })
 
 onUnmounted(() => {
@@ -336,5 +313,3 @@ onUnmounted(() => {
   cancelAnimationFrame(animationFrameId)
 })
 </script>
-
-
