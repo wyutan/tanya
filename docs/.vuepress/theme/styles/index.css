@@ -370,10 +370,27 @@
     color: var(--vp-c-text-2);
 }
 
-/*卡片 彩色 text*/
 .about-me-card-text-color {
+    /* 1. 保留并优化原有的渐变效果 */
     background: var(--vp-bg-home-hero-name, linear-gradient(315deg, var(--vp-c-purple-1) 10%, var(--vp-c-brand-2) 75%, var(--vp-c-brand-2) 100%));
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* 2. 增加发光滤镜：让文字在背景网格上“跳”出来 */
+    filter: drop-shadow(0 0 8px rgba(100, 190, 190, 0.3));
+    
+    /* 3. 字体与平滑过渡 */
+    font-weight: 800; 
+    transition: all 0.3s ease !important;
+}
+
+/* 4. 针对深色模式的“闪电”强化 */
+[data-theme="dark"] .about-me-card-text-color {
+    /* 增加文字外发光，模拟闪电在暗夜中的亮度 */
+    filter: drop-shadow(0 0 12px rgba(122, 220, 233, 0.5));
+    /* 如果你想让颜色更偏向“闪电金”，可以覆盖背景 */
+    background: linear-gradient(315deg, #ffcc00 10%, #00f2ff 100%);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
