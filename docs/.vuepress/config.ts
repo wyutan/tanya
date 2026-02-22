@@ -29,6 +29,13 @@ export default defineUserConfig({
       { type: 'doc', dir: '/os/cloud', title: '云计算相关', sidebar: 'auto' },
       { type: 'doc', dir: '/storage', title: '存储相关', sidebar: 'auto' },
       { type: 'doc', dir: '/容器', title: '容器相关', sidebar: 'auto' },
+
+      autoFrontmatter: {
+        permalink: true,  // 是否生成永久链接
+        createTime: true, // 是否生成创建时间
+        title: true,      // 是否生成标题
+      },
+
     ],
     comment: {
     provider: 'Giscus',
@@ -67,16 +74,6 @@ export default defineUserConfig({
      * @see https://theme-plume.vuejs.press/config/basic/#cache
      */  
     cache: 'filesystem',
-    
-    /**
-     * 为 markdown 文件自动添加 frontmatter 配置
-     * @see https://theme-plume.vuejs.press/config/basic/#autofrontmatter
-     */
-    autoFrontmatter: {
-      permalink: true,  // 是否生成永久链接
-      createTime: true, // 是否生成创建时间
-      title: true,      // 是否生成标题
-    },
 
     /**
     * markdown
