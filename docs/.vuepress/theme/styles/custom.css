@@ -1,98 +1,69 @@
 :root {
-  /** 主题颜色 */
-
-  /*
-  --vp-c-brand-1: #5086a1;
-  --vp-c-brand-2: #6aa1b7;
-  --vp-c-brand-3: #8cccd5;
-  --vp-c-brand-soft: rgba(131, 208, 218, 0.314);
-  */
-
-  /** 背景颜色 */
-
-  /*
-  --vp-c-bg: #fff;
-  --vp-c-bg-alt: #f6f6f7;
-  --vp-c-bg-elv: #fff;
-  --vp-c-bg-soft: #f6f6f7;
-  */
-
-  /** 文本颜色 */
-
-  /*
-  --vp-c-text-1: rgba(60, 60, 67);
-  --vp-c-text-2: rgba(60, 60, 67, 0.78);
-  --vp-c-text-3: rgba(60, 60, 67, 0.56);
-  */
+  /** 主题颜色 - 取消注释可以自定义品牌色 */
+  /* --vp-c-brand-1: #5086a1; */
+  /* --vp-c-brand-soft: rgba(131, 208, 218, 0.314); */
 }
 
-/** 深色模式 */
+/** 深色模式变量 */
 [data-theme="dark"] {
-  /*
-  --vp-c-brand-1: #8cccd5;
-  --vp-c-brand-2: #6aa1b7;
-  --vp-c-brand-3: #5086a1;
-  --vp-c-brand-soft: rgba(131, 208, 218, 0.314);
-  */
-
-  /*
-  --vp-c-bg: #1b1b1f;
-  --vp-c-bg-alt: #161618;
-  --vp-c-bg-elv: #202127;
-  --vp-c-bg-soft: #202127;
-  */
-
-  /*
-  --vp-c-text-1: rgba(255, 255, 245, 0.86);
-  --vp-c-text-2: rgba(235, 235, 245, 0.6);
-  --vp-c-text-3: rgba(235, 235, 245, 0.38);
-  */
+  /* --vp-c-brand-1: #8cccd5; */
 }
+
+/* 1. 基础样式：结合玻璃拟态与呼吸动画 */
 .vp-card, .custom-container, .vp-doc .custom-container {
-  transition: all 0.3s ease; /* 让位移和阴影的变化变得平滑 */
-  border: 1px solid transparent; /* 预留边框位，防止悬浮时闪烁 */
-  animation: card-breathing 3s ease-in-out infinite !important;
+  /* 玻璃质感：半透明 + 背景模糊 */
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  
+  /* 边框与平滑过渡 */
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.3s ease;
+  
+  /* 呼吸动画：使用 !important 确保生效 */
+  animation: card-breathing 4s ease-in-out infinite !important;
 }
 
-/* --- 在这里添加交错感代码 --- */
+/* 2. 深色模式下的玻璃适配 */
+[data-theme="dark"] .vp-card, 
+[data-theme="dark"] .custom-container {
+  background-color: rgba(30, 30, 35, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3. 交错感：让卡片起伏错开 */
 .vp-card:nth-child(2n), 
 .custom-container:nth-child(2n) {
-  animation-delay: 1s; /* 让偶数位的卡片晚 1 秒呼吸，形成起伏感 */
+  animation-delay: 1.5s;
 }
 
-/* 2. 定义鼠标悬停（Hover）时的状态 */
+/* 4. 鼠标悬停（Hover）：强力拔高反馈 */
 .vp-card:hover, .custom-container:hover, .vp-doc .custom-container:hover {
-  animation-play-state: paused; /* 鼠标移上去时，动画暂停在当前位置，或者直接被下面的 transform 覆盖 */
-  /* 向上浮动一点点，增加灵动感 */
-  transform: translateY(-19px); 
+  /* 悬停时停止呼吸动画，切换为手动位移 */
+  animation-play-state: paused !important; 
+  transform: translateY(-19px) !important; 
   
-  /* 增加一个明显的深色阴影（针对浅色模式） */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  
-  /* 可选：给边框加一点点品牌色，呼应你的“闪电”座右铭 */
-  border-color: var(--vp-c-brand-1);
+  /* 悬停时光亮感增强 */
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
+  border-color: var(--vp-c-brand-1) !important;
 }
 
-/* 3. 针对深色模式的优化 */
+/* 5. 深色模式悬停发光优化 */
 [data-theme="dark"] .vp-card:hover, 
 [data-theme="dark"] .custom-container:hover {
-  /* 深色模式下黑色阴影不明显，可以改成淡淡的发光效果 */
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 12px rgba(131, 208, 218, 0.2);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(131, 208, 218, 0.2) !important;
 }
 
-/* 定义呼吸动画：极小幅度的上下浮动和阴影缩放 */
+/* 6. 修正后的呼吸动画定义 */
 @keyframes card-breathing {
   0%, 100% {
     transform: translateY(0);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
   50% {
-    transform: translateY(-12px); /* 调大幅度到 12px 方便观察 */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  }
-}
-  100% {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* 调至 8px 幅度，兼顾肉眼可见与优雅感 */
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   }
 }
