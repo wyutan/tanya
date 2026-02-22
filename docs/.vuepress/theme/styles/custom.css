@@ -1,30 +1,43 @@
+/* =================================================/
+/* 1. 全局变量定义 (Root & Dark) */
+/* =================================================/ */
 :root {
-  /** 主题颜色 - 取消注释可以自定义品牌色 */
-  /* --vp-c-brand-1: #5086a1; */
-  /* --vp-c-brand-soft: rgba(131, 208, 218, 0.314); */
+  /* 跑马灯线条颜色 - 浅色模式 */
+  --beam-color-1: #00f2ff; /* 电光蓝 */
+  --beam-color-2: #7000ff; /* 极光紫 */
+  
+  /* 卡片背景色 - 浅色模式 */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-hover-bg: rgba(255, 255, 255, 0.95);
 }
 
-/** 深色模式变量 */
 [data-theme="dark"] {
-  /* --vp-c-brand-1: #8cccd5; */
+  /* 跑马灯线条颜色 - 深色模式 (适配闪电座右铭) */
+  --beam-color-1: #ffcc00; /* 闪电金 */
+  --beam-color-2: #00d4ff; /* 电光蓝 */
+  
+  /* 卡片背景色 - 深色模式 */
+  --card-bg: rgba(20, 20, 25, 0.8);
+  --card-hover-bg: rgba(30, 30, 35, 0.95);
 }
-/* 1. 基础容器：保持之前的跑马灯结构 */
+
+/* =================================================/
+/* 2. 基础容器：强制透明化 */
+/* =================================================/ */
 .vp-card, .custom-container, .vp-doc .custom-container {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  backdrop-filter: blur(10px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  overflow: hidden !important; 
+  background: transparent !important; 
+  border: none !important; 
   border-radius: 12px;
   transition: all 0.3s ease;
-  
-  /* 呼吸动画应用 */
   animation: card-breathing 4s ease-in-out infinite !important;
 }
 
-/* 2. 跑马灯：增加旋转动画应用 */
+/* =================================================/
+/* 3. 跑马灯核心 (引用变量) */
+/* =================================================/ */
 .vp-card::before, .custom-container::before, .vp-doc .custom-container::before {
   content: '';
   position: absolute;
@@ -32,89 +45,65 @@
   height: 400%;
   top: -150%;
   left: -150%;
-  z-index: -2;
+  z-index: -2 !important;
+  
+  /* 使用 var() 引用上面定义的颜色变量 */
   background: conic-gradient(
     from 0deg,
     transparent 0%,
-    #00f2ff 5%, 
-    #7000ff 10%, 
-    transparent 15%,
+    var(--beam-color-1) 10%, 
+    var(--beam-color-2) 20%, 
+    transparent 30%,
     transparent 100%
-  );
-  /* 旋转动画应用 */
+  ) !important;
+  
   animation: border-beam-rotate 4s linear infinite !important;
 }
 
-/* 3. 核心：交错感设置 (Staggered Effect) */
-
-/* 让第 2, 5, 8... 个卡片延迟 1 秒 */
-.vp-card:nth-child(3n+2), 
-.custom-container:nth-child(3n+2) {
-  animation-delay: 1s !important;
-}
-.vp-card:nth-child(3n+2)::before, 
-.custom-container:nth-child(3n+2)::before {
-  animation-delay: 1s !important; /* 线条旋转也同步延迟 */
-}
-
-/* 让第 3, 6, 9... 个卡片延迟 2 秒 */
-.vp-card:nth-child(3n+3), 
-.custom-container:nth-child(3n+3) {
-  animation-delay: 2s !important;
-}
-.vp-card:nth-child(3n+3)::before, 
-.custom-container:nth-child(3n+3)::before {
-  animation-delay: 2s !important;
-}
-
-/* 4. 遮罩层：保持不变 */
+/* =================================================/
+/* 4. 玻璃感遮罩层 (引用变量) */
+/* =================================================/ */
 .vp-card::after, .custom-container::after, .vp-doc .custom-container::after {
   content: '';
   position: absolute;
-  inset: 2.5px; 
-  background: rgba(255, 255, 255, 0.85); 
-  backdrop-filter: blur(5px);
+  inset: 2px; 
+  z-index: -1 !important;
+  
+  background: var(--card-bg) !important; 
+  backdrop-filter: blur(12px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
   border-radius: 10px;
-  z-index: -1;
 }
 
-/* 5. 动画定义：旋转与呼吸 */
+/* =================================================/
+/* 5. 交错感与交互 (保持不变) */
+/* =================================================/ */
+.vp-card:nth-child(3n+2), .custom-container:nth-child(3n+2) { animation-delay: 1s !important; }
+.vp-card:nth-child(3n+2)::before, .custom-container:nth-child(3n+2)::before { animation-delay: 1s !important; }
+
+.vp-card:nth-child(3n+3), .custom-container:nth-child(3n+3) { animation-delay: 2s !important; }
+.vp-card:nth-child(3n+3)::before, .custom-container:nth-child(3n+3)::before { animation-delay: 2s !important; }
+
+.vp-card:hover, .custom-container:hover, .vp-doc .custom-container:hover {
+  animation-play-state: paused !important; 
+  transform: translateY(-19px) !important; 
+  z-index: 10 !important; 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1) !important;
+}
+
+.vp-card:hover::after, .custom-container:hover::after {
+  background: var(--card-hover-bg) !important;
+}
+
+/* =================================================/
+/* 6. 动画定义 */
+/* =================================================/ */
 @keyframes border-beam-rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 @keyframes card-breathing {
-  0%, 100% { transform: translateY(0); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
-  50% { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); }
-}
-
-/* 6. 交互与模式适配保持不变... */
-[data-theme="dark"] .vp-card::after, [data-theme="dark"] .custom-container::after {
-  background: rgba(27, 27, 31, 0.9) !important;
-}
-/* 补充：鼠标悬停时的强力交互 */
-.vp-card:hover, .custom-container:hover, .vp-doc .custom-container:hover {
-  animation-play-state: paused !important; /* 暂停呼吸 */
-  transform: translateY(-19px) !important; /* 保持你喜欢的高度 */
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15) !important;
-  z-index: 10; /* 确保悬浮的卡片不被遮挡 */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), inset 0 0 10px rgba(0, 242, 255, 0.1) !important;
-}
-
-.vp-card:hover::before, .custom-container:hover::before {
-  animation-play-state: paused !important; /* 悬停时跑马灯也暂停，方便阅读内容 */
-}
-/* 在代码末尾添加，让深色模式的线条更硬核 */
-[data-theme="dark"] .vp-card::before, 
-[data-theme="dark"] .custom-container::before {
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    #ffcc00 5%,  /* 闪电金 */
-    #00d4ff 10%, /* 电光蓝 */
-    transparent 15%,
-    transparent 100%
-  );
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
