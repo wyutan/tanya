@@ -104,7 +104,7 @@ canvas {
   display: flex;
 }
 
-/* 旋转的流光背景 */
+/* 1. 默认状态：五彩跑马灯 */
 .marquee-card::before {
   content: '';
   position: absolute;
@@ -112,13 +112,16 @@ canvas {
   height: 200%;
   top: -50%;
   left: -50%;
-  /* 渐变配色：透明-主题色-高亮-主题色-透明 */
+  /* 这里的颜色可以无限增加，形成彩虹效果 */
   background: conic-gradient(
-    transparent,
-    rgba(77, 208, 225, 0.6), 
-    #ffffff, 
-    rgba(77, 208, 225, 0.6),
-    transparent 30%
+    #ff0000, 
+    #ff7f00, 
+    #ffff00, 
+    #00ff00, 
+    #00ffff, 
+    #0000ff, 
+    #8b00ff, 
+    #ff0000
   );
   animation: rotate-border 4s linear infinite;
   z-index: 0;
@@ -145,15 +148,16 @@ canvas {
   border: none !important;
 }
 
-/* 悬停效果：加速旋转并改变颜色 */
+/* 2. 悬停状态：让颜色更亮或旋转更快 */
 .marquee-card:hover::before {
-  animation-duration: 1.5s;
+  animation-duration: 2s; /* 速度翻倍 */
+  /* 悬停时可以换一组更亮的荧光色 */
   background: conic-gradient(
-    transparent,
     #00f2ff, 
-    #ffcc00, /* 悬停时加入闪电金 */
-    #00f2ff,
-    transparent 30%
+    #00ff00, 
+    #fbff00, 
+    #ff00f7, 
+    #00f2ff
   );
 }
 
