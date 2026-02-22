@@ -8,24 +8,17 @@
 [data-theme="dark"] {
   /* --vp-c-brand-1: #8cccd5; */
 }
-/* 1. 基础样式：玻璃拟态 + 呼吸动画 + 容器准备 */
+/* 1. 基础样式：保持不变 */
 .vp-card, .custom-container, .vp-doc .custom-container {
   position: relative;
   z-index: 1;
-  /* 必须切除超出的线条部分 */
   overflow: hidden; 
-  
-  /* 玻璃质感：半透明 + 背景模糊 */
   background-color: rgba(255, 255, 255, 0.7) !important;
   backdrop-filter: blur(10px) saturate(180%);
   -webkit-backdrop-filter: blur(10px) saturate(180%);
-  
-  /* 基础边框与平滑过渡 */
   border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  border-radius: 12px; /* 确保圆角一致 */
+  border-radius: 12px;
   transition: all 0.3s ease;
-  
-  /* 呼吸动画 */
   animation: card-breathing 4s ease-in-out infinite !important;
 }
 
@@ -33,40 +26,48 @@
 .vp-card::before, .custom-container::before, .vp-doc .custom-container::before {
   content: '';
   position: absolute;
-  /* 宽度和高度需要足够大，确保旋转时覆盖所有边缘 */
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
+  /* 增加尺寸确保旋转覆盖角落 */
+  width: 300%; 
+  height: 300%;
+  top: -100%;
+  left: -100%;
   z-index: -2;
-  /* 彩色线条渐变：只显示一小段颜色，模拟线条移动 */
+  /* 调整渐变，让线条更明显 */
   background: conic-gradient(
-    transparent, 
-    #00f2ff, /* 电光蓝 */
-    #00d4ff, 
-    transparent 25%
+    from 0deg,
+    transparent 0%,
+    #00f2ff 5%, 
+    #00d4ff 10%,
+    transparent 20%,
+    transparent 100%
   );
-  animation: border-beam-rotate 4s linear infinite;
+  animation: border-beam-rotate 4s linear infinite !important;
 }
 
-/* 3. 创建遮罩层：保护中心透明度 */
+/* 3. 关键修改：明确遮罩层背景 */
 .vp-card::after, .custom-container::after, .vp-doc .custom-container::after {
   content: '';
   position: absolute;
-  /* 留出 1.5px 宽度显示线条 */
-  inset: 1.5px;
-  background: inherit;
-  backdrop-filter: inherit;
-  border-radius: inherit;
+  /* 边框厚度：如果看不见，可以把这个值调大到 3px 测试 */
+  inset: 2px; 
+  /* 不要使用 inherit，直接给一个和父级一致的颜色 */
+  background: rgba(255, 255, 255, 0.9); 
+  backdrop-filter: blur(10px);
+  border-radius: 10px; /* 略小于父级圆角，视觉更和谐 */
   z-index: -1;
 }
 
-/* 4. 动画定义：线条旋转 + 呼吸 */
+/* 6. 深色模式遮罩适配 */
+[data-theme="dark"] .vp-card::after, 
+[data-theme="dark"] .custom-container::after {
+  background: rgba(27, 27, 31, 0.9) !important;
+}
+
+/* 4. 动画定义保持不变 */
 @keyframes border-beam-rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
 @keyframes card-breathing {
   0%, 100% {
     transform: translateY(0);
