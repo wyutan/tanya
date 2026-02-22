@@ -60,7 +60,6 @@
 </template>
 
 <style scoped>
-/* 基础容器：确保背景透明，露出底部的 Canvas */
 .container {
   z-index: 1;
   width: 100%;
@@ -98,50 +97,51 @@ canvas {
   gap: 20px;
 }
 
-/* -------------------- 跑马灯边框核心 -------------------- */
+/* -------------------- 优化后的细边框浅色跑马灯 -------------------- */
 .marquee-card {
   position: relative;
-  padding: 3px; /* 边框粗细 */
-  border-radius: 15px;
+  padding: 1.5px; /* 边框调细 */
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
-  background: transparent; /* 卡片外部区域保持透明 */
+  background: transparent;
 }
 
-/* 旋转的彩色流光层 */
 .marquee-card::before {
   content: '';
   position: absolute;
-  width: 250%; 
-  height: 250%;
-  top: -75%;
-  left: -75%;
+  width: 200%; 
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  /* 颜色变浅：调低了透明度 */
   background: conic-gradient(
-    #ff0000, #ff7f00, #ffff00, #00ff00, 
-    #00ffff, #0000ff, #8b00ff, #ff0000
+    rgba(255, 0, 0, 0.3), 
+    rgba(255, 255, 0, 0.3), 
+    rgba(0, 255, 255, 0.3), 
+    rgba(0, 0, 255, 0.3), 
+    rgba(255, 0, 255, 0.3),
+    rgba(255, 0, 0, 0.3)
   );
-  animation: rotate-border 6s linear infinite;
+  animation: rotate-border 8s linear infinite; /* 速度放慢一点更显优雅 */
   z-index: 0;
 }
 
-/* 内部不透明背景层：只有这里是白色的 */
 .marquee-inner {
   position: relative;
   z-index: 1;
   flex: 1;
-  background: #ffffff !important; /* 强制白色，遮挡流光 */
-  border-radius: 12px;
+  background: #ffffff !important; 
+  border-radius: 12.5px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* 深色模式下，内部变为深色，不影响外部透明度 */
 [data-theme='dark'] .marquee-inner {
   background: #1b1c20 !important;
 }
 
-/* 内部组件处理 */
 .marquee-inner > * {
   background: transparent !important;
   border: none !important;
@@ -154,38 +154,14 @@ canvas {
   to { transform: rotate(360deg); }
 }
 
-/* -------------------- 其他辅助样式 -------------------- */
-.top-disclaimer {
-  width: 100%;
-  margin: 20px 0 10px 0;
-  padding: 12px 20px;
-  background: rgba(213, 55, 55, 0.05);
-  border: 1px dashed rgba(213, 55, 55, 0.4);
-  color: #d53737;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  backdrop-filter: blur(4px);
-}
-
+/* -------------------- 辅助样式 -------------------- */
+.top-disclaimer { width: 100%; margin: 20px 0 10px 0; padding: 12px 20px; background: rgba(213, 55, 55, 0.05); border: 1px dashed rgba(213, 55, 55, 0.4); color: #d53737; font-size: 18px; font-weight: bold; border-radius: 8px; display: flex; align-items: center; gap: 10px; backdrop-filter: blur(4px); }
 .about-me-card-title-normal { color: var(--vp-c-text-2); font-size: 13px; margin-bottom: 10px; }
 .about-me-card-text-big { color: var(--vp-c-text-1); margin: 10px 0; font-size: 36px; font-weight: 700; line-height: 1.1; }
-
-.about-me-card-text-color {
-  background: var(--vp-bg-home-hero-name, linear-gradient(315deg, var(--vp-c-purple-1) 10%, var(--vp-c-brand-2) 75%, var(--vp-c-brand-2) 100%));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+.about-me-card-text-color { background: var(--vp-bg-home-hero-name, linear-gradient(315deg, var(--vp-c-purple-1) 10%, var(--vp-c-brand-2) 75%, var(--vp-c-brand-2) 100%)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
 @media screen and (max-width: 770px) {
-  .about-me-3-2-row, .about-me-1-1-row {
-    display: flex;
-    flex-direction: column;
-  }
+  .about-me-3-2-row, .about-me-1-1-row { display: flex; flex-direction: column; }
 }
 </style>
 
@@ -208,8 +184,6 @@ const canvasRef = ref<HTMLCanvasElement | null>(null)
 const ctx = ref<CanvasRenderingContext2D | null>(null)
 const linesGap = 20
 const comets = ref<Comet[]>([])
-const mouseX = ref(-1)
-const mouseY = ref(-1)
 let animationFrameId: number
 
 const initCanvas = () => {
@@ -233,29 +207,19 @@ const drawGrid = () => {
   if (!canvas || !context) return
   context.clearRect(0, 0, canvas.width, canvas.height)
   context.lineWidth = 1
-  const radius = 100
-  const hasMouse = mouseX.value >= 0 && mouseY.value >= 0
+  
   const theme = document.documentElement.getAttribute('data-theme');
   let baseColor = theme === 'dark' ? "30, 120, 120" : "100, 190, 190"
   let baseAlpha = theme === 'dark' ? 0.15 : 0.12
 
+  // 移除了 mouseX/mouseY 的影响逻辑，直接绘制固定透明度的网格
+  context.strokeStyle = `rgba(${baseColor}, ${baseAlpha})`
+
   for (let y = 0; y < canvas.height; y += linesGap) {
-    context.beginPath(); context.moveTo(0, y); context.lineTo(canvas.width, y)
-    let alpha = baseAlpha
-    if (hasMouse) {
-      const dy = Math.abs(y - mouseY.value)
-      if (dy < radius) alpha = baseAlpha + (1 - dy / radius) * (1 - baseAlpha)
-    }
-    context.strokeStyle = `rgba(${baseColor}, ${alpha})`; context.stroke()
+    context.beginPath(); context.moveTo(0, y); context.lineTo(canvas.width, y); context.stroke()
   }
   for (let x = 0; x < canvas.width; x += linesGap) {
-    context.beginPath(); context.moveTo(x, 0); context.lineTo(x, canvas.height)
-    let alpha = baseAlpha
-    if (hasMouse) {
-      const dx = Math.abs(x - mouseX.value)
-      if (dx < radius) alpha = baseAlpha + (1 - dx / radius) * (1 - baseAlpha)
-    }
-    context.strokeStyle = `rgba(${baseColor}, ${alpha})`; context.stroke()
+    context.beginPath(); context.moveTo(x, 0); context.lineTo(x, canvas.height); context.stroke()
   }
 }
 
@@ -294,7 +258,6 @@ const animate = () => {
 onMounted(() => {
   initCanvas(); animate()
   const timer = setInterval(createComet, 500)
-  window.addEventListener('mousemove', (e) => { mouseX.value = e.clientX; mouseY.value = e.clientY })
   onUnmounted(() => {
     clearInterval(timer)
     window.removeEventListener('resize', resizeCanvas)
