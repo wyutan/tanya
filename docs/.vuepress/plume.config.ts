@@ -1,6 +1,6 @@
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import { navbar } from './navbar'
-import notes from './notes/index.ts'
+import notes from './index.ts'
 
 /**
  * @see https://theme-plume.vuejs.press/config/basic/
