@@ -36,11 +36,7 @@
              <AboutMeSkill/>
           </div>
         </div>
-        <div class="marquee-card">
-          <div class="marquee-inner">
-             <AboutMeLife/>
-          </div>
-        </div>
+        <AboutMeLife/>
       </div>
 
       <div class="about-me-1-1-row">
