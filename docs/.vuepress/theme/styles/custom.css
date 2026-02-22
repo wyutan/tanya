@@ -51,12 +51,20 @@
 .vp-card, .custom-container, .vp-doc .custom-container {
   transition: all 0.3s ease; /* 让位移和阴影的变化变得平滑 */
   border: 1px solid transparent; /* 预留边框位，防止悬浮时闪烁 */
+  animation: card-breathing 4s ease-in-out infinite; /* 每4秒完成一次呼吸循环，增加呼吸效果  */
+}
+
+/* --- 在这里添加交错感代码 --- */
+.vp-card:nth-child(2n), 
+.custom-container:nth-child(2n) {
+  animation-delay: 1s; /* 让偶数位的卡片晚 1 秒呼吸，形成起伏感 */
 }
 
 /* 2. 定义鼠标悬停（Hover）时的状态 */
 .vp-card:hover, .custom-container:hover, .vp-doc .custom-container:hover {
+  animation-play-state: paused; /* 鼠标移上去时，动画暂停在当前位置，或者直接被下面的 transform 覆盖 */
   /* 向上浮动一点点，增加灵动感 */
-  transform: translateY(-15px); 
+  transform: translateY(-19px); 
   
   /* 增加一个明显的深色阴影（针对浅色模式） */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
@@ -70,4 +78,20 @@
 [data-theme="dark"] .custom-container:hover {
   /* 深色模式下黑色阴影不明显，可以改成淡淡的发光效果 */
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 12px rgba(131, 208, 218, 0.2);
+}
+
+/* 定义呼吸动画：极小幅度的上下浮动和阴影缩放 */
+@keyframes card-breathing {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    transform: translateY(-4px); /* 静止时的起伏幅度不要太大，保持优雅 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
 }
