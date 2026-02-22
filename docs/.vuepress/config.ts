@@ -22,21 +22,16 @@ export default defineUserConfig({
     hostname: 'http://git.x-echo.net',
     search: { provider: 'local' },
 
-    collections: [
-      { type: 'post', dir: '/about', title: '' },
-      { type: 'doc', dir: '/network', title: '网络相关', sidebar: 'auto' },
-      { type: 'doc', dir: '/os/linux', title: 'Linux相关', sidebar: 'auto' },
-      { type: 'doc', dir: '/os/cloud', title: '云计算相关', sidebar: 'auto' },
-      { type: 'doc', dir: '/storage', title: '存储相关', sidebar: 'auto' },
-      { type: 'doc', dir: '/容器', title: '容器相关', sidebar: 'auto' },
-
-      autoFrontmatter: {
-        permalink: true,  // 是否生成永久链接
-        createTime: true, // 是否生成创建时间
-        title: true,      // 是否生成标题
-      },
-
-    ],
+      collections: [
+        { type: 'post', dir: '/about', title: '' },
+        { type: 'doc', dir: '/network', title: '网络相关', sidebar: 'auto', autoFrontmatter: { permalink: true, createTime: true, title: true, }, },
+        { type: 'doc', dir: '/os/linux', title: 'Linux相关', sidebar: 'auto' },
+        { type: 'doc', dir: '/os/cloud', title: '云计算相关', sidebar: 'auto' },
+        { type: 'doc', dir: '/storage', title: '存储相关', sidebar: 'auto' },
+        { type: 'doc', dir: '/容器', title: '容器相关', sidebar: 'auto' },
+        
+  
+      ],
     comment: {
     provider: 'Giscus',
     comment: true,
