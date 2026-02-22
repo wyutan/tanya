@@ -56,7 +56,7 @@
 /* 2. 定义鼠标悬停（Hover）时的状态 */
 .vp-card:hover, .custom-container:hover, .vp-doc .custom-container:hover {
   /* 向上浮动一点点，增加灵动感 */
-  transform: translateY(-6px); 
+  transform: translateY(-15px); 
   
   /* 增加一个明显的深色阴影（针对浅色模式） */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
