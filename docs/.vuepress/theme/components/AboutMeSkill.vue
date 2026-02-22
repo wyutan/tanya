@@ -165,4 +165,32 @@ const certifications = ref([
     transform: translateX(0%);
   }
 }
+/* --- 技能图标交互增强 --- */
+
+/* 1. 针对每一个图标的小卡片容器 */
+.about-me-skill-detail > span {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
+/* 2. 鼠标悬停在图标小卡片上的效果 */
+.about-me-skill-detail > span:hover {
+  /* 整体稍微放大并旋转，增加灵动感 */
+  transform: scale(1.15) rotate(3deg); 
+  /* 背景变为品牌色（淡色），突出选中状态 */
+  background-color: var(--vp-c-brand-soft) !important; 
+  /* 增加一个外发光投影 */
+  box-shadow: 0 4px 12px var(--vp-c-brand-glow, rgba(0, 242, 255, 0.2)); 
+}
+
+/* 3. 针对图标图片本身 */
+.about-me-skill-detail > span img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* 4. 当鼠标划过时，图标独立增加发光效果 */
+.about-me-skill-detail > span:hover img {
+  /* 使用你定义的品牌色 1 产生图标轮廓发光 */
+  filter: drop-shadow(0 0 4px var(--vp-c-brand-1, #00f2ff));
+}
 </style>
