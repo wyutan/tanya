@@ -100,7 +100,7 @@ canvas {
 /* -------------------- 优化后的细边框浅色跑马灯 -------------------- */
 .marquee-card {
   position: relative;
-  padding: 2px; /* 边框调细 */
+  padding: 2.5px; /* 边框调细 */
   border-radius: 14px;
   overflow: hidden;
   display: flex;
