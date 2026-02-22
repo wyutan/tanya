@@ -2,108 +2,89 @@
 /* 1. 全局变量定义 (Root & Dark) */
 /* =================================================/ */
 :root {
-  /* 跑马灯线条颜色 - 浅色模式 */
-  --beam-color-1: #00f2ff; /* 电光蓝 */
-  --beam-color-2: #7000ff; /* 极光紫 */
+  /* 品牌色 - 浅色模式 */
+  --vp-c-brand-glow: rgba(0, 242, 255, 0.2);
   
-  /* 卡片背景色 - 浅色模式 */
+  /* 卡片背景与材质 */
   --card-bg: rgba(255, 255, 255, 0.7);
-  --card-hover-bg: rgba(255, 255, 255, 0.95);
+  --card-hover-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="dark"] {
-  /* 跑马灯线条颜色 - 深色模式 (适配闪电座右铭) */
-  --beam-color-1: #ffcc00; /* 闪电金 */
-  --beam-color-2: #00d4ff; /* 电光蓝 */
+  /* 品牌色 - 深色模式 (闪电金感) */
+  --vp-c-brand-glow: rgba(255, 204, 0, 0.15);
   
-  /* 卡片背景色 - 深色模式 */
-  --card-bg: rgba(20, 20, 25, 0.8);
-  --card-hover-bg: rgba(30, 30, 35, 0.95);
+  /* 卡片背景与材质 */
+  --card-bg: rgba(30, 30, 35, 0.7);
+  --card-hover-bg: rgba(40, 40, 45, 0.9);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 /* =================================================/
-/* 2. 基础容器：强制透明化 */
+/* 2. 核心容器：玻璃拟态材质 */
 /* =================================================/ */
 .vp-card, .custom-container, .vp-doc .custom-container {
-  position: relative !important;
-  z-index: 1 !important;
-  overflow: hidden !important; 
-  background: transparent !important; 
-  border: none !important; 
+  position: relative;
+  z-index: 1;
+  
+  /* 玻璃拟态核心：半透明背景 + 模糊 */
+  background: var(--card-bg) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  
+  /* 精致边框 */
+  border: 1px solid var(--card-border) !important;
   border-radius: 12px;
-  transition: all 0.3s ease;
-  animation: card-breathing 4s ease-in-out infinite !important;
+  
+  /* 基础动画 */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: card-breathing 5s ease-in-out infinite !important;
 }
 
 /* =================================================/
-/* 3. 跑马灯核心 (引用变量) */
+/* 3. 交错感设置 (让不同卡片起伏错开) */
 /* =================================================/ */
-.vp-card::before, .custom-container::before, .vp-doc .custom-container::before {
-  content: '';
-  position: absolute;
-  width: 400%; 
-  height: 400%;
-  top: -150%;
-  left: -150%;
-  z-index: -2 !important;
-  
-  /* 使用 var() 引用上面定义的颜色变量 */
-  background: conic-gradient(
-    from 0deg,
-    transparent 0%,
-    var(--beam-color-1) 10%, 
-    var(--beam-color-2) 20%, 
-    transparent 30%,
-    transparent 100%
-  ) !important;
-  
-  animation: border-beam-rotate 4s linear infinite !important;
-}
+.vp-card:nth-child(3n+2), .custom-container:nth-child(3n+2) { animation-delay: 1.2s !important; }
+.vp-card:nth-child(3n+3), .custom-container:nth-child(3n+3) { animation-delay: 2.4s !important; }
 
 /* =================================================/
-/* 4. 玻璃感遮罩层 (引用变量) */
+/* 4. 强力交互：悬停反馈 (Hover) */
 /* =================================================/ */
-.vp-card::after, .custom-container::after, .vp-doc .custom-container::after {
-  content: '';
-  position: absolute;
-  inset: 2px; 
-  z-index: -1 !important;
-  
-  background: var(--card-bg) !important; 
-  backdrop-filter: blur(12px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(180%) !important;
-  border-radius: 10px;
-}
-
-/* =================================================/
-/* 5. 交错感与交互 (保持不变) */
-/* =================================================/ */
-.vp-card:nth-child(3n+2), .custom-container:nth-child(3n+2) { animation-delay: 1s !important; }
-.vp-card:nth-child(3n+2)::before, .custom-container:nth-child(3n+2)::before { animation-delay: 1s !important; }
-
-.vp-card:nth-child(3n+3), .custom-container:nth-child(3n+3) { animation-delay: 2s !important; }
-.vp-card:nth-child(3n+3)::before, .custom-container:nth-child(3n+3)::before { animation-delay: 2s !important; }
-
 .vp-card:hover, .custom-container:hover, .vp-doc .custom-container:hover {
-  animation-play-state: paused !important; 
-  transform: translateY(-19px) !important; 
-  z-index: 10 !important; 
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1) !important;
-}
-
-.vp-card:hover::after, .custom-container:hover::after {
+  /* 暂停呼吸动画，执行拔高 */
+  animation-play-state: paused !important;
+  transform: translateY(-19px) !important;
+  
+  /* 视觉强化：背景更实，阴影更深 */
   background: var(--card-hover-bg) !important;
+  border-color: var(--vp-c-brand-1, #00f2ff) !important;
+  
+  /* 组合阴影：外阴影拔高层级 + 内阴影增加质感 */
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.12), 
+    inset 0 0 15px var(--vp-c-brand-glow) !important;
+  
+  z-index: 10 !important;
 }
 
 /* =================================================/
-/* 6. 动画定义 */
+/* 5. 动画定义：温柔的呼吸感 */
 /* =================================================/ */
-@keyframes border-beam-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes card-breathing {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    /* 5s周期内的轻微起伏 */
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
 }
 
-@keyframes card-breathing {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+/* 特殊处理：去掉可能干扰的伪元素 */
+.vp-card::before, .vp-card::after,
+.custom-container::before, .custom-container::after {
+  display: none !important;
 }
