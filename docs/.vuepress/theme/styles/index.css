@@ -310,13 +310,34 @@
 /*--------------------主页--------------------*/
 
 /*单个卡片背景*/
+/*
 .about-me-card-bg {
     padding: 1rem;
     border-radius: 12px;
-    background-color: var(--main-card-background);
+    /* 核心：增加 backdrop-filter 让卡片透出底部的网格 */
+    background-color: var(--main-card-background) !important;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
     border: 1px solid var(--main-card-border);
     box-shadow: 0 8px 12px -4px var(--main-border-shadow);
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+*/
+
+.about-me-card-bg {
+    padding: 1rem;
+    border-radius: 12px;
+    /* 核心：增加 backdrop-filter 让卡片透出底部的网格 */
+    background-color: var(--main-card-background) !important;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
+    border: 1px solid var(--main-card-border);
+    box-shadow: 0 8px 12px -4px var(--main-border-shadow);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 /*卡片 小 title*/
@@ -337,6 +358,11 @@
         font-size: 24px;
         margin: 7px 0;
     }
+}
+.about-me-card-bg:hover {
+    transform: translateY(-8px); /* 悬停拔高 */
+    background-color: var(--about-card-hover-bg) !important;
+    box-shadow: 0 15px 30px -5px var(--main-border-shadow);
 }
 
 /*卡片 暗色 text*/
