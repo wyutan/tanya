@@ -33,7 +33,7 @@ export default defineUserConfig({
           dir: '/network',
           title: '网络相关',
           sidebar: 'auto',
-          sidebarCollapsed: undefined, 
+          sidebarCollapsed: true, 
           autoFrontmatter:
           {
             permalink: true,
@@ -46,7 +46,7 @@ export default defineUserConfig({
           dir: '/os/linux',
           title: 'Linux相关',
           sidebar: 'auto',
-          sidebarCollapsed: undefined, 
+          sidebarCollapsed: true, 
           autoFrontmatter:
           {
             permalink: true,
@@ -59,7 +59,7 @@ export default defineUserConfig({
           dir: '/os/cloud',
           title: '云计算相关',
           sidebar: 'auto',
-          sidebarCollapsed: undefined, 
+          sidebarCollapsed: true, 
           autoFrontmatter:
           {
             permalink: true,
@@ -72,7 +72,7 @@ export default defineUserConfig({
           dir: '/storage',
           title: '存储相关',
           sidebar: 'auto',
-          sidebarCollapsed: undefined, 
+          sidebarCollapsed: true, 
           autoFrontmatter:
           {
             permalink: true,
@@ -85,7 +85,7 @@ export default defineUserConfig({
           dir: '/容器',
           title: '容器相关',
           sidebar: 'auto',
-          sidebarCollapsed: undefined, 
+          sidebarCollapsed: true, 
           autoFrontmatter:
           {
             permalink: true,
