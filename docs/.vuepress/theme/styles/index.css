@@ -310,11 +310,11 @@
 /*--------------------主页--------------------*/
 
 /*单个卡片背景*/
-/*
+/**
 .about-me-card-bg {
     padding: 1rem;
     border-radius: 12px;
-    /* 核心：增加 backdrop-filter 让卡片透出底部的网格 */
+    
     background-color: var(--main-card-background) !important;
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
@@ -324,7 +324,7 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
-*/
+**/
 
 .about-me-card-bg {
     padding: 1rem;
