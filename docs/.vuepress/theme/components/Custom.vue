@@ -15,6 +15,7 @@
             <slot name="motto">
               <p class="about-me-card-title-normal">𝓂𝑜𝓉𝓉𝑜</p>
               <p class="about-me-card-text-big about-me-card-text-color">是星辰，是雨雾<br>是闪电，是不羁的灵魂</p>
+              /*
               <div class="video-wrapper">
                 <iframe 
                   src="https://www.youtube.com/embed/B5unCXpegAw?start=60" 
@@ -23,6 +24,18 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowfullscreen
                   class="youtube-iframe"
+                ></iframe>
+              </div>
+              */
+              <div class="video-wrapper">
+                <iframe 
+                  src="//player.bilibili.com/player.html?bvid=BV1MEfMBJEFq&page=1&high_quality=1" 
+                  title="Bilibili video player"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen
+                  class="bilibili-iframe"
+                  style="width: 100%; height: 500px;" 
                 ></iframe>
               </div>
             </slot>
