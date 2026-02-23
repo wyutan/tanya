@@ -20,8 +20,8 @@ const lifeData = [
   {name: '生活', value: (200 / 1000).toFixed(2)},
   {name: '游戏', value: (100 / 1000).toFixed(2)},
   {name: '阅读', value: (50 / 1000).toFixed(2)},
-  {name: '学习', value: (210 / 1000).toFixed(2)},
-  {name: '发呆', value: (50 / 1000).toFixed(2)}
+  {name: '学习', value: (110 / 1000).toFixed(2)},
+  {name: '发呆', value: (150 / 1000).toFixed(2)}
 ];
 onMounted(() => {
   const myChart = echarts.init(chartRef.value);
