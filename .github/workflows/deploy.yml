@@ -27,8 +27,10 @@ jobs:
 
       # 1. 仅安装 package.json 中定义的依赖
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
+        run: pnpm install
+# --frozen-lockfile
+      -name: update
+        run: pnpm update 
       # 2. 正常构建
       - name: Build VuePress site
         run: pnpm run docs:build
