@@ -26,16 +26,10 @@ jobs:
           cache: 'pnpm' # 开启缓存，加快后续构建速度
 
       # 1. 仅安装 package.json 中定义的依赖
-      #- name: Install Dependencies
-       # run: pnpm install
-      # --frozen-lockfile
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
       - name: update
-        run: |
-          rm -f pnpm-lock.yaml
-          pnpm add -D vuepress-theme-plume@1.0.0-rc.205 @mathjax/src mathjax-full
-          pnpm install
-        #run: pnpm add -D vuepress-theme-plume@1.0.0-rc.205 @mathjax/src mathjax-full    
-        #run: pnpm update 
+        run: pnpm update 
       # 2. 正常构建
       - name: Build VuePress site
         run: pnpm run docs:build
